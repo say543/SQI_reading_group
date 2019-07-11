@@ -1,4 +1,5 @@
 07112019
+https://web.microsoftstream.com/video/c2c345ae-1289-41d8-b27d-6c3b5af293c5
 
 google has its prduction code (not in pytohn)   , snorkel is purely in python.
 
@@ -6,6 +7,9 @@ google has its prduction code (not in pytohn)   , snorkel is purely in python.
 Labeling<snorkel>
     labeling function
        example : two sentences, invite + trigram as signal
+          不一定要兩個input
+          如果兩個input 一個要有true label 
+          
         
         
        many functions will apply so output a list of signals
