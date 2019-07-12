@@ -10,7 +10,8 @@ Even though in the second turn saying  yes, email will not been sent
 so in this case. cortana should not say 'confirm' but it will keep the same intent as the previous email to continue the conversaion.
 
 
-same situation will happen when user says 'No' or  'Cancel'   becasue wthiout providing message, the conversation should continue with 'Reject' or Cancel'
+same situation will happen when user says 'No' or  'Cancel'   becasue wthiout providing message, the conversation should continue 
+without 'Reject' or Cancel' intents 
 
 the above examples miss message.
 
