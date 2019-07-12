@@ -5,7 +5,7 @@ The idea to have the following multi turn scenarios is to increase use successti
 
 the first example is a two-turn dialogue
 
-user wants to trigger send email action but fail to provide message text.
+users want to trigger send email action but fail to provide message text.
 Even though in the second turn saying  yes, email will not been email
 so in this case. cortana should not say 'confirm' but it will keep in previous email to continue the conversaion.
 
