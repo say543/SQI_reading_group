@@ -7,19 +7,19 @@ the first example is a two-turn dialogue
 
 users want to trigger send email action but fail to provide message text.
 Even though in the second turn saying  yes, email will not been sent
-so in this case. cortana should not say 'confirm' but it will keep the same intent as the previous email to continue the conversaion.
+so in this case. yes should not be 'confirm' intent and it will keep the same intent as the previous intent continue the conversaion.
 
 
 same situation will happen when user says 'No' or  'Cancel'   becasue wthiout providing message, the conversation should continue 
-without 'Reject' or Cancel' intents 
+without likes 'Reject' or Cancel' intents 
 
 the above examples miss message.
 
-How about examples having message but missing email_subject? we can apply the same scenario here to keep communication
-
-
 
 Is this clear?
+
+How about examples having message but missing email_subject? we can apply the same scenario here to continue the communication
+
 
 
 Here is another scenario for a four-turn dialogue.
