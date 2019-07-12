@@ -1,0 +1,92 @@
+1)	BERT Rediscovers the Classical NLP Pipeline - https://arxiv.org/pdf/1905.05950.pdf [ACL’19]
+#############
+[my reading]
+#############
+
+two contribution
+first,  we  present  an  analysis  thatspans  the  common  components  of  a  traditionalNLP pipeline.   We show that the order in whichspecific abstractions are encoded reflects the tradi-tional hierarchy of these tasks.  Second, we quali-tatively analyze how individual sentences are pro-cessed by the BERT network, layer-by-layer.  Weshow  that  while  the  pipeline  order  holds  in  ag-gregate, the model can allow individual decisionsto  depend  on  each  other  in  arbitrary  ways,  de-ferring ambiguous decisions or revising incorrectones based on higher-level information.
+
+
+
+traditional NLP pipeline
+
+
+
+define two metrics to probe how good BERT it is related to different tasks
+
+3.1 
+Scalar Mixing Weights
+scalar  mixingtechnique  introduced  by  the  ELMo  model.  
+? not sure what odes it means
+
+
+Center-of-Gravity.
+
+
+3.2 cumulative scoring (cumulative classfieirs)
+we train a series of classifiers{P(`)τ}`which use scalar mixing (Eq. 1) to attendto layer`as well asall previouslayers.P(0)τcorre-sponds to a non-contextual baseline that uses onlya bag of word(piece) embeddings, whileP(L)τ=Pτcorresponds to probing all layers of the BERTmodel
+
+
+
+
+
+
+
+experiment
+[Linguistic Patterns.]
+traditional pipeline
+POS tags pro-cessed  earliest,  followed  by  constituents,  depen-dencies, semantic roles, and coreference.
+
+
+it appears that basic syntactic information appearsearlier in the network,  while high-level semanticinformation appears at higher layers.
+
+also  found  that  con-stituents are represented earlier than coreference.
+
+ syntacticinformation is more localizable, with weights re-lated to syntactic tasks tending to be more “spiky”(highK(s)andK(∆)), while information relatedto semantic tasks is generally spread across the en-tire  network.
+ 
+ 
+ 
+ [Comparison of Metrics.]
+ or  many  tasks,  wefind that the differential scores are highest in thefirst few layers of the model (layers 1-7 for BERT-large), i.e.  most examples can be correctly classi-fied very early on.  We attribute this to the avail-ability  of  heuristic  shortcuts:   while  challengingexamples  may  not  be  resolved  until  much  later
+ 
+ we  observe  that  the  learned  mixingweights are concentrated much later,  layers 9-20for BERT-large.4We observe–particularly whenweights  are  highly  concentrated–that  the  highestweights are found on or just after thehighestlay-ers which give an improvement∆(`)τin F1 score.
+ 
+ 
+ 
+ 
+ #######
+ discusssion
+ #######
+ 
+ until 35:00
+ 
+ ? 印度人  不是太董
+ 
+ edge probing
+    span  range  1,2,....
+    monitor span range context
+     
+    classifer  trained or not?
+ 
+ 
+ 
+ 
+ 2)	(If time permits) What Does BERT Look At? An Analysis of BERT's Attention - https://arxiv.org/pdf/1906.04341.pdf
+ 
+ 
+  #######
+ discusssion
+ #######
+ 36:20
+ 
+ 
+ predict next token
+
+ based on attention score to see dependency.  (no find turning)
+ 
+ 
+ high number means too data,model cannot learn anything.
+ 
+ 
+ 
+ 
