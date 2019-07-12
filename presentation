@@ -3,21 +3,21 @@ The idea to have the following multi turn scenarios is to increase use successti
 
 
 
-the first example is a two-turn dialogue
+the first scenario is a two-turn dialogue
 
 users want to trigger send email action but fail to provide message tex in the first turn.
 Even though in the second turn users say  yes, email will not been sent
-so in this case. yes should not be 'confirm' intent and it will keep the same intent as the previous intent continue the conversaion.
+Therefore, yes should not be 'confirm' intent and it will keep the same intent as the previous intent continue the conversaion.
 
 
 same situation will happen when user says 'No' or  'Cancel'. Becasue wthiout providing message, 
-'No' and 'Cancel' should not be 'reject' and 'Cancel' intents, instead, they should be previous intent to continue conversation.
+'No' and 'Cancel' should not be 'reject' and 'Cancel' intents, instead, they should be previous intents to continue conversation.
 
 Is this clear?
 
-the above examples miss message.
+this example misses message.
 
-How about examples having message but missing email_subject? we can apply the same scenario here to continue the conversation.
+for the example having message but missing email_subject? we can apply the same logic here to continue the conversation.
 
 
 the second scenario is a four-turn dialogue.
@@ -25,7 +25,7 @@ the second scenario is a four-turn dialogue.
 users try to inquiry what emails they have in the first turn,  
 then select one email in the second turn, 
 do 'reply' action in the third turn
-becasue message is missed ,what users say in the four turn should be classified as message.
+becasue message is missed ,what users say in the four turn should be classified as 'message slot'
 Therefore, the four turn should be the previous turn's intent to continue conversation.
 In this example, it will be 'reply'.
 
