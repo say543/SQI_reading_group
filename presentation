@@ -15,9 +15,9 @@ same situation will happen when user says 'No' or  'Cancel'. Becasue wthiout pro
 
 Is this clear?
 
-this example misses message.
+above examples miss message.
 
-for the example having message but missing email_subject? we can apply the same logic here to continue the conversation.
+for examples having message but missing email_subject? we can apply the same logic here to continue the conversation.
 
 
 the second scenario is a four-turn dialogue.
@@ -31,6 +31,10 @@ In this example, it will be 'reply'.
 
 
 same logic can be applied when users say 'forward' in the third turn as well.
+
+
+michael and i are thinking if this featurize can be apllied for doamins needing message slot
+Teams status set might a potentila scenario but we might want to see how it wokrs in email domain
 
 
 
