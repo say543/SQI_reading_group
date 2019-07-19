@@ -7,6 +7,23 @@
 [my reading]
 #############
 
+'atomic edit'  from a previous wokr
+
+These edits are minedfrom Wikipedia edit history and consist of in-stances in which a human editor has inserted asingle contiguous phrase into, or deleted a sin-gle
+using   
+
+用edit 跟diff 來生成corpus來生成一個new corpus
+A  new  corpus  (WikiAtomicEdits)  of  26Matomic insertions and 17M atomic deletionscovering  8  languages  (§3  and§4):
+https://github.com/google-research-datasets/wiki-atomic-edits
+
+
+trained on WikiAtomicEdits en-code different aspects of semantics and dis-course than models trained on raw, unstruc-tured text (§6)
+用new corpus trained 可以學到不同的東西
+
+
+
+ The goal of our experiments is to es-tablish  that  the  signal  provided  in  these  edits  isdistinct from what one could easily obtain givencurrently available text corpora.
+
 
 #######
 discusssion
