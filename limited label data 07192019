@@ -1,0 +1,22 @@
+
+
+multi nomical distrbrion
+
+
+pi_iu^k  :  is 0.3 .0,5 etc
+
+
+
+using EM  to deal with intrable to trable
+
+
+
+underlying assumption 
+1> objection is maximal.
+2> guess initialiZationm
+if bad, EM might not convergence
+
+non uniqueness (same as KM)
+confusion matrix to check if it is related to true label(even though we do not know)
+
+p.s uniform distrinutiom is not good according to EM algorithm.
