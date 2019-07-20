@@ -20,3 +20,13 @@ non uniqueness (same as KM)
 confusion matrix to check if it is related to true label(even though we do not know)
 
 p.s uniform distrinutiom is not good according to EM algorithm.
+
+
+
+discussion:
+
+matrix completion to improve EM time?
+
+
+
+pi_jl : will provide how good a doctor(a label function) it is?
