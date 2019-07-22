@@ -6,3 +6,68 @@ https://web.microsoftstream.com/video/2517f1e5-a9c9-4ecb-8dc0-5df3a828ce16
 
 
 cannot join by person
+
+
+
+###########3
+#discussion
+###########
+
+github.com/HazyResearch/metal
+Snorkel.Stanford.edu
+
+
+key idea: Learn from the agreeements & disagree ents between the LFs.
+[Ratner].
+
+42:51
+matrix completion
+dependency graph
+   preprocessing 來建立edge 哪些是 positive correcltion lamba x , 哪些是negative correcltatiyon lamda y
+   然後有這些才可以完成matrix completion
+   
+   
+45:00
+yong question ? 不懂
+using lamda directly
+
+
+
+46:00
+can theory applied to regression problem?
+no formal response.
+
+47:20
+summary
+
+
+52:00
+slcing function
+how to aid users to find
+? not yet ready.
+
+沒有人問boost
+
+? 還沒有eye-off data 的support
+
+
+
+1:03:20
+目標:  down wait correcltion 
+but high-qualiteis works are corrected on conditionally
+再不知道ground true 的情況 怎麼計算correcltion?
+
+paper 有  但是沒有一個簡單的statement 可以說明
+
+
+
+
+
+
+
+
+
+
+
+
+
