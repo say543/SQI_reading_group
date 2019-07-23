@@ -39,7 +39,14 @@ b4: 40
 每一個bucket 固定sample 200
 
 
-這樣的目的 可以把taileld 
+這樣的目的 可以把taileld 分散到bucket
+即使是probability 低的query (in calendar but not delete_entry intent)
+每個bucket 也會被正常sanmple
+
+probability 低的query (not in calendar domain)
+她也有機會被sample 但是binary classfier 有足夠的negative samples 學習
+會在low probability 的bucket  但是 權重低 所以cover 的比例也低
+
 
 
 
