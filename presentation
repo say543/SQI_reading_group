@@ -2,13 +2,34 @@
 =====================
 teams file presentattion
 =====================
+https://msasg.visualstudio.com/Cortana/_workitems/edit/1907853
+
+https://msasg.visualstudio.com/Cortana/_workitems/edit/1906801
+
+
+1. Design LU model schemas
+2. Collect modeling data from existing mystuff model wit schema mapping
+3. Annotated new queries extracted from the answer spec
+4. Build initial LU model
+5. Quick evaluation
+6. Deploy to M365Search virtual service
+
+
+last week we fininalized the first version of schema. Yues sent it through email thread
+we pulled qqueres from answer spec, annotated them and trained with existing teams related data and mystuff data with schema mapping.
+
+and we ran a quick evaluation and deployed to MS365 search virtual service
+https://httpqas13-qas-sdf-mw1p.qas.binginternal.com/httpqas?vs=M365Search&debug=1&query=Files+I+worked+last+week
+
+
+
 
 
 
 =====================
 email presentation 07232019
 =====================
-
+https://msasg.visualstudio.com/Cortana/_workitems/edit/1886832
 
 The idea to have the following multi turn scenarios is to increase use successtion rate. By walking through those examples, there will be more clear picture
 
