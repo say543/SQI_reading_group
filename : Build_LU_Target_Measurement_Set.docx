@@ -1,0 +1,17 @@
+07232019
+
+https://microsoft.sharepoint.com/teams/CortanaCore/_layouts/15/Doc.aspx?sourcedoc=%7Be57cb1b3-2985-4ed5-80f2-c365ec95f676%7D&action=default&wdLOR=cDC343F61%2D876B%2D46BD%2D9BD9%2D072FA0A21E7D&ct=1563912417990&or=Outlook-Body&cid=92B69B24-B1FF-4261-BD50-B66648330CC2&slrid=f029f39e-a077-0000-bf81-9477ba7c813b&originalPath=aHR0cHM6Ly9taWNyb3NvZnQuc2hhcmVwb2ludC5jb20vOnc6L3QvQ29ydGFuYUNvcmUvRWJPeGZPV0ZLZFZPZ1BMRFpleVY5bllCUndKS0lSTlF0TVhyMEd3RG5POTI3Zz9ydGltZT1ZM05VWktrUDEwZw
+
+
+
+目的:
+
+frequency intent / unfreqency intent
+希望sample 的時候能夠balance
+
+
+利用binary classfier  而不是multi classfier
+?
+
+感覺mult classfier 也能做到?
+
