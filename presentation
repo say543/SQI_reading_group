@@ -33,8 +33,11 @@ In this example, it will be 'reply'.
 same logic can be applied when users say 'forward' in the third turn as well.
 
 
-michael and i are thinking if this featurize can be apllied for doamins needing message slot
-Teams status set might a potentila scenario but we might want to see how it wokrs in email domain
+Now this feature has been shipped to email dev flight
+michael and i are thinking if this featurize can be apllied for doamins needing message slot.
+
+
+eg: Teams status set might a potentila scenario but we might want to see how it wokrs in email domain
 
 
 
