@@ -19,6 +19,8 @@ last week we fininalized the first version of schema. Yues sent it through email
 we pulled qqueres from answer spec, annotated them and trained with existing teams related data and mystuff data with schema mapping.
 
 and we ran a quick evaluation and deployed to MS365 search virtual service
+This is URI to show
+Yong also shareed schema, first dataset and link to file answer team.
 https://httpqas13-qas-sdf-mw1p.qas.binginternal.com/httpqas?vs=M365Search&debug=1&query=Files+I+worked+last+week
 
 
