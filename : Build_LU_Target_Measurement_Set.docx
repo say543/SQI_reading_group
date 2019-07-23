@@ -3,15 +3,46 @@
 https://microsoft.sharepoint.com/teams/CortanaCore/_layouts/15/Doc.aspx?sourcedoc=%7Be57cb1b3-2985-4ed5-80f2-c365ec95f676%7D&action=default&wdLOR=cDC343F61%2D876B%2D46BD%2D9BD9%2D072FA0A21E7D&ct=1563912417990&or=Outlook-Body&cid=92B69B24-B1FF-4261-BD50-B66648330CC2&slrid=f029f39e-a077-0000-bf81-9477ba7c813b&originalPath=aHR0cHM6Ly9taWNyb3NvZnQuc2hhcmVwb2ludC5jb20vOnc6L3QvQ29ydGFuYUNvcmUvRWJPeGZPV0ZLZFZPZ1BMRFpleVY5bllCUndKS0lSTlF0TVhyMEd3RG5POTI3Zz9ydGltZT1ZM05VWktrUDEwZw
 
 
+email title
+RE: Design review for building LU target measurement set
 
 目的:
 
 frequency intent / unfreqency intent
-希望sample 的時候能夠balance
+希望unfreqency intent 可以被catch 被sample 到
 
 
-利用binary classfier  而不是multi classfier
+利用binary intent classfier  而不是multi intent classfier
 ?
+No
+主要是目前multi classifer intent 的negative example 現在not across all domains
+非常限縮 用eg calendar -> delete_enttry
+query 1:  delet_entry delete my next meeting
+query 2:  delete_entry delete my email
 
-感覺mult classfier 也能做到?
+這兩個可能分數拉不開  因為query 2 在email domain
+這樣倒置  之後再bucket  的時候沒有好的distribution
+
+if 重train binary classifer with all toher doamins negative datas,
+筆可以學到這兩個的差別
+
+然後assume 有b0 b1 .... b10 的bucket (根據intent score)
+
+
+b1: 10
+b2: 20
+b3: 30
+b4: 40
+
+ 用number of queryis 代表權種 (bucket 裡面重複的query 會重複計算)
+
+每一個bucket 固定sample 200
+
+
+這樣的目的 可以把taileld 
+
+
+
+
+
 
