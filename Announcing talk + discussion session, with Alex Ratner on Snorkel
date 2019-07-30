@@ -6,7 +6,8 @@ https://web.microsoftstream.com/video/2517f1e5-a9c9-4ecb-8dc0-5df3a828ce16
 
 
 cannot join by person
-聽到almost one hour 還沒聽完
+<done>
+但是比起sam 的用處不太大
 
 
 
@@ -58,13 +59,65 @@ how to aid users to find
 but high-qualiteis works are corrected on conditionally
 再不知道ground true 的情況 怎麼計算correcltion?
 
-paper 有  但是沒有一個簡單的statement 可以說明
+paper 有  但是沒有一個簡單的statement 
+
+robust component analysis problems
+
+
+1:12:00
+how to check conditinal indendepent ?
+using strcutre learning approach (close to RPCA)
+
+
+
+1:14:00
+class imbalance?
+
+
+1:17:00
+load attroney teams questions?
+這個不太懂
+2018 papers
+matrix completiom approach
+
+20 label function
+
+covaraince matrix " 20 x 20
+
+為了加速  有分析bell curve 拿掉一些 trival 的計算
+...
+
+
+1:22:00
+guarantee label function will outperform majority vote
 
 
 
 
+1:23:00
+why true labe of variance is observable through the picture?
+this is an old way to estimate (proof of concept, not related to snorkel)
 
+step1:
+estimate the sturcutre
+step2:
+plot subset of labeling functions that are conditonal independent
 
+1:24:00
+transformation function
+
+learn generators
+then 
+generators generate a sequence of transformation functions
+then 
+learn descriptor tell difference between transformed datapoints v.s unlabel data points
+
+idea: trying to match distribtuion
+but this technique might also fit for some problems
+
+what do you mean distribution
+是根據trained descriptor 的 model  的learned 的representation 的表示法
+(GAN) network
 
 
 
