@@ -1,6 +1,7 @@
 
 https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fweb.microsoftstream.com%2Fvideo%2Fe51e0f35-bfd4-44ed-831d-63ee4b4e3f3d&data=04%7C01%7CChiehChun.Chang%40microsoft.com%7C485d108151b44489281d08d71f72032c%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637012446856260179%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C-1&sdata=vKmVLRMZjibaGUyWvIWOIYSnDPrja3ybNddHMDzro8Y%3D&reserved=0
-
+https://login.microsoftonline.com/common/oauth2/authorize?client_id=cf53fce8-def6-4aeb-8d30-b158e7b1cf83&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3d5UndivKJ_bbx3OkBoswsyXQrcKLGcj6hVAGkITy0rQDr6wA-ZQGhHj83o10Bo3-wxnerGXItwnPvhXKnE4IkIRllo2PPExqhK_d4fvUmoI1AQQEGsAXmxkMr1Svjvl9yADFIxkAnPYX2hWXwSFFUP0Wunj75KVf1giDH6V3wynoXrXudtaTCcoKE-_CYY8oy9ZM0qUe8Chpt46Rg5SwUqLb35beOyNeotJuFXFqojEgDeUMTzWRSePROiR6hCe4U8kmJOI5domfS3HS43jm7JHs7np8&nonce=637012577963643477.NmRlNTdlODYtY2RiMS00OTk4LWI2MjUtM2I4YTEyYWRlNDAyYmIwYzVkOTYtYjRjNy00OWY1LWE3MzAtYzNhZWRkMDU2NmU0&nonceKey=OpenIdConnect.nonce.2uVoRJLRBtkzBJtHVGjZnNL%2fXzxo37UzHdRD1pcdo5A%3d&site_id=500453&redirect_uri=https%3a%2f%2fweb.microsoftstream.com%2f&post_logout_redirect_uri=https%3a%2f%2fproducts.office.com%2fmicrosoft-stream&msafed=0&prompt=none
+https://web.microsoftstream.com/video/28bc2742-9ed6-4aae-a594-7b74f3103bea 
 
 feedback discusssion
 what might be introduced as new features
