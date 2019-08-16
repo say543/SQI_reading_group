@@ -1,3 +1,47 @@
-
+https://web.microsoftstream.com/video/b6847140-740f-4d67-a439-e20d2619ce32
 
 limited label data 08162019
+
+
+p(data)  should  p(data, param)
+
+
+hong:
+
+p(c1 | w1,.... w2. wn)    
+   wrong   ,should be p(c1, w1,w2.....wn)
+
+Nb  product, will   p
+
+beta: bernoulis
+
+
+? normalization
+
+
+
+laplace smoothe
+
+? ANG
+
+? 分母不懂
+
+
+variational inference
+
+
+
+condtional utterance?
+
+
+analytical form form distirbuted function  <= EM requires.
+
+analytical
+
+
+EM:
+point of estimiation
+
+
+
+
