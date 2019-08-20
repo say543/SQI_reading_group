@@ -21,5 +21,28 @@ different partions for each user
 each user has multiple data vectors
 
 
+SSD servingi 
+  tree /graph traversla
+  1. drive too slow, cannot support high QPS
+  2. in memory ? memcache does perform well since cache hit rate is pretty low
+  
+  solution:
+    split vectors into head part / tail part
+    
+    head part
+       using memory to store
+       ? 
+    tail part
+        cluster or inverted index
+          support to be drive
+          
+          
+    how to search
+    1. memory search tree  -> search graph
+    ? 這個還沒聽完
+    
+    
+
+
 user:
 Mingqin Li
