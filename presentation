@@ -101,9 +101,51 @@ the first dataset.  Ling  also put on valualbe comments i am revising schema.
 
 
 
+==========================
+brownbag presentation presentation 08222019
+=====================
+
+CI : constraint index
+https://microsoft-my.sharepoint-df.com/:u:/p/manikanj/ERcNQFpov3FMssXUclHeDtMBfVBlKcPNTPJ4Y7LFL3IZ4Q?e=IDoHI9
+
+
+"answer service host" api service 
+   for people , files and calendar only
+   
+   api serovce is to fetch index service after QAS workflows triggered by LU service by domain/intent/slot result
+   
+acronum using DW engine (not api to do that )
+
+
+QAS WorkFlow 中間是zap
+
+our model only provides trigger for QAS workflow
+
+https://substrate.microsoft.net/documentation/
+substrate model discussion
+
+model A and model B  both services runniung on top of same machine
+model B will call mobel A's service to serve request and model B has more extended restful service compared to A
+
+
+model B2 service runs on the machine different from model A and models
+provides more flexibility for customized logic where answee skill teams will
+host there service 
+  
+  
+  mode l A, B B2 belong to same cluster
+  
+right know cortana models hosted in model D
+eventually will move to B2 snice D to A having to much latency
+
+B2 in the same cluster as A and B so having lower lantency.
+   
+
+extended query serivce 
 
 
 
 
+https://microsoft-my.sharepoint.com/:w:/r/personal/mingwu_microsoft_com/_layouts/15/doc2.aspx?sourcedoc=%7B8A39A8D1-CC79-4738-90F3-F3474C92D037%7D&file=Files_LU_for_Skills_and_Answer.docx&action=default&mobileredirect=true&DefaultItemOpen=1
 
 
