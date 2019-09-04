@@ -149,3 +149,59 @@ extended query serivce
 https://microsoft-my.sharepoint.com/:w:/r/personal/mingwu_microsoft_com/_layouts/15/doc2.aspx?sourcedoc=%7B8A39A8D1-CC79-4738-90F3-F3474C92D037%7D&file=Files_LU_for_Skills_and_Answer.docx&action=default&mobileredirect=true&DefaultItemOpen=1
 
 
+
+
+================
+brown bag 09042019
+================
+
+files is a new doamin we initiated.  
+The motivation is becauase teams domain has conflict with other domains like ondevice, mystuff and calendar so that precision and recall
+are low.
+also, there is new request from files answer teams so we decide to extract file-related queries and put in another domain to support
+files-related query
+
+For cold-start problem, we leverageg my stuff data to create the first model since some requirements are aligned with some mystuff schema
+Meanwhile, we adjusted schema to also support other files operation such as file_share, file_download.
+
+
+those are three file voice operations supported by teams and they will be supported by files domain as well.
+The first is teams files tag
+The second is teams basic file content search 
+The thrid one is multi-turn file selection.
+
+There are many requirements from 3s file anwer teams so I attach their spec here
+For the initial schema, we planning to support following p0 request
+the first is to support file's data source look up like onedirve
+The second is to support author lookup  like Vivek's files
+The third one is to support action taken on file like  files modified yesterday
+
+
+this is the diagram where files domain being hosted.
+
+it serves two requests: one is from the up-righthand side,  teams search bar. 
+It will hit 3s file answer api, leverage files domain in 3s substrate and use slots result to fetch constraint index
+
+the other is from teams voice skill. it will hit teams file skill, leverage files domain in cortana to generate slot results
+this slot results will be proprated as 'extend query' to 3s file answer api so both requests will behave consistent
+here extend queries means original query plus slot result
+
+For some future work,
+we will apply client-based lu idea to do data annotation for files queries
+also, we will apply contexutal lu to improve file search scenario.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
