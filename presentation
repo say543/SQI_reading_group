@@ -158,15 +158,15 @@ brown bag 09042019
 files is a new doamin we initiated.  
 The motivation is becauase teams domain has conflict with other domains like ondevice, mystuff and calendar so that precision and recall
 are low.
-also, there is new request from files answer teams so we decide to extract file-related queries and put in another domain to support
-files-related query
+also, there are new request from files answer teams so we decide to extract file-related queries and put in another domain to support
+files-related query.
 
 For cold-start problem, we leverageg my stuff data to create the first model since some requirements are aligned with some mystuff schema
 Meanwhile, we adjusted schema to also support other files operation such as file_share, file_download.
 
 
 those are three file voice operations supported by teams and they will be supported by files domain as well.
-The first is teams files tag
+The first is teams files tab
 The second is teams basic file content search 
 The thrid one is multi-turn file selection.
 
