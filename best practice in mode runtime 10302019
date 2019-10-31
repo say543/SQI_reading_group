@@ -1,0 +1,24 @@
+https://web.microsoftstream.com/video/1c41a941-cfbb-49eb-aace-3e64f0fdf77a
+
+
+hard sort 是model 在efine 的時候就要define的
+
+影片有wiki
+
+影響preprocessing 的result
+
+
+
+cortan page 有skill test tool 可以hit 不同的environement
+
+
+目前只有dev cluster 可以看到raw query (westus ) central lize
+
+hailoong 有輸出到costmo
+
+prod 不能log 所以完全沒有　....　也沒有暫時的可以看
+
+
+有compilant 的kusto log position 可以看
+
+
