@@ -134,6 +134,9 @@ model B will call mobel A's service to serve request and model B has more extend
 model B2 service runs on the machine different from model A and models
 provides more flexibility for customized logic where answee skill teams will
 host there service 
+
+B2 service wiki link
+https://substrate.microsoft.net/documentation/Develop/Model-B2/Model-B2-overview#h_key-issues-with-model-b
   
   
   mode l A, B B2 belong to same cluster
