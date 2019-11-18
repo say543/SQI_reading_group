@@ -4,3 +4,415 @@ https://web.microsoftstream.com/video/fe0d0d4a-e0a4-469d-bfe7-93313c970e46
 
 teams channel
 also has slide
+
+
+"Bert distillation"
+03:00
+problem:
+commitment =>sentenmce classficiation task
+also used in other teams
+
+
+student trains on soft laevel generated from teacher network(bert , pretrained model)  instead if hard label
+    ? antoher guy said he tried with hard label and it does help. but it might not tranlstate to different scenarios
+
+teacher network: BERT + smaller label set 
+
+student network : using teacher netwokr output to predict unlabel set
+    might be logic, probability
+    
+    
+    stduent netwokr converges first becasue of teach network
+
+latency 
+GRU less latency but Bert big latency
+
+this lecture : sentence classifcation
+
+has pipeline for review
+has wiki link
+
+lession
+one kind of pipeline might only fit onme scenario
+trying different architectures of stduent networks
+
+still using testset eye-on tst to train different achitectures
+
+temprature paramter does not provide gain based on experiement
+tries to use teaching network to do labeling and use it to train student netowkr, but no much gain
+
+
+'Fastrank to fast ML: model distillation for keypoints sentence importance' 
+19:00
+
+problem:
+output highlighted summary form summary to remind users
+
+at-a-galance procdut
+   : might be related to MSAI one presentation
+   
+ word document
+     hierarchechy annotation process, complex
+     
+ initial 
+    <offline evaluation>
+    rule-based model
+       make sense
+    fastRank
+    ....
+    
+ sentence classifcation
+ contextual sentence classfication
+    subnet, no need to be the whole documents
+    
+    BERTSuM
+       0-1 prediction
+      
+    Conextual T3
+       focal sentence
+       pre 20
+       after 20
+       
+    BSum3
+       mean-saured error loss on logics
+    
+    contexual model
+       cross-entropy loss on probability       
+    has link   
+    
+    not test
+        on mean-squared or cross-entropy  not found which way is better.
+        
+        20 ?
+          looking up judged data to figure out the number of this 
+        
+        t3 
+          input all vectors
+    
+'ditillation of fine-tuned classifcation Models BERT v.s GPT2'
+37:31
+experience sharing
+
+problem:
+neural rewriting
+help people improve their writing
+binary classfication problem
+yes : show rewrite
+no : not show rewrite sensence
+
+
+bert distillation
+12 layers tranformer as teacher model
+
+has already had a base model in production:
+    using it generate unlabeld sentence pair (originla mode/ rewirte) to train teacher model
+    
+    
+3 layer bert model as student modle
+
+Mean square error against logit1(from teach model) and logit2(from student model)
+
+
+student model peformes better than normal 3L transformer fine-tuned on labeld trainnig data
+  1> has distillation
+  2> use larger tarnsfer data set to train
+      ?no explain wher this transfer data set from
+
+GPT2 distillation
+　　GPT1 GPT2 差別
+   ? https://www.zhihu.com/question/312405015
+   
+   
+  apply same proceudre with BERT distillation
+  student model 20% loss than normal 3L transformer fine-tuned on labeld trainnig data 
+     here student models is 3-layer GPT2 , not 3-layer Bert
+  
+  
+  modifiying distillation procedure, trying uo update learning rate, loss function, temperature
+     but still not good
+     
+     
+  student model's performance not consistent across "all evaluations"
+  
+
+DistilBERT
+  ? 跟bert distillation 的差別
+  https://zhuanlan.zhihu.com/p/86900556
+  distillation happens 在bert (teacher) 而不是在fine-tune face
+     plugin ready in the internet
+  pure cut to 6 layers
+  
+  
+in conlcusion
+   bert distillation : fine-tune bert by student model  容易
+   distilling BERT: find-tune bert directly 困難
+   
+   
+no link to share   
+   
+ ? 問題
+   find tune bert and distilling it to distill bert
+   ? 這個意思不太懂
+   second way of distillation
+   
+   reson why bert distillation is better than gpt-2 distillation
+   ? no answer ,  it is good to say NO during lecture
+   
+   
+   
+'sequence level distillation for Cortana Slot Tagging'
+59:00
+
+problem:
+focus on slot tagging
+
+factorized sequence labellin +  unlabeled abundunt data
+? what does factorized seuqence mean
+
+stage1:
+   using  domain unlabled data to fine turn BERT and 
+   ? how to do that
+   
+stage2:
+   using  'in-domain labeled data' to generate task specific finetuned BERT
+stage3:
+   knowledge distillation path
+   
+   stage 3 多用了extra domain unlabeld data 跟data augmentation compared to stage2
+   
+   
+result
+    our-three-stage model(distilled)  performs better than production
+        also distilled GRU 0.81(4ms)  v.s 0.87  fine-turn bert(100 ms)  
+        
+        last two row production :  precision(revall) i guess
+
+    adding 'unlabled data set' further improveds distillation
+    ? need to ask how to use
+    
+    some slots are easier to match
+    
+    message slot has bigger gap between teacher netwokr and student netork
+        might be losing structure information in student model
+        
+    why unblabled data helps in teacher model
+      the better is to use unlabeld domain data
+        
+    
+questions
+     generak BERT, online version , not spending resource
+     
+     session question
+        session information might be good for better models
+        MXNET ? another thing
+    
+
+'pre-trained langugage mode l distillation with unlabeled transfer data'
+1:13:00  MSR
+
+a pictures for how mant paramters for many models.
+  BERT has the most parames
+  the seocn is GPT-2
+  
+  logits
+     log probability values over classes(before softmax)
+     captures uncertainty better than hard labels
+     
+  hidden informaiton
+  
+  
+  hard distillation
+      teacher 
+         1>  LM pretrainnig  with unlabled data (optional)
+         2>  use labeled data to to turn teacher network by eg : cross entropy loss
+         3> use teacher to preduct unlabled daga to generate augmented data
+         
+      student
+          using 'augmented data' 跟labeled data 來train staduent
+  
+  
+  soft distillation
+         3>  using logits represntations instead of hard label
+         　　　logits 是用softmax 產生output 
+         4>  using 'logits represntations' 跟labeled data 來train staduent
+              logits 跟repsentations 的分開的兩個
+         
+         
+  distillation two processes
+     input1:
+        to minimize
+        cross-entripy loss from labeled data
+     input2:
+        mean-squared logits loss  (unlabeld data)
+        讓teacher 的logits 跟student logits 盡量接近
+     input3
+        mean-squared representation loss (unlabeld )data
+         讓teacher 的repsenttionm 跟student representation 盡量接近
+        
+        ? 還不確定representation 跟logic loss 的差別
+        ? 後面network 的representation present 沒有特別說
+        就是word emneffing layer -> bi LSTM -> FC dense layer  最後輸出softmax
+        這因該是distillation 的architecture
+        ?不知道最後輸出softmax 是什麼　　是classifcation, labeling or sequence prediction
+      
+      
+     how to optimize three multiple loss functions ? very difficult
+     uult
+        multitask loss
+        1> using joint
+          each has a hyper parameterto see which one is optimized further
+        2> using stragewise
+            representation optimization first
+            因為represntation for student 沒有pretrained
+            這邊就像是對student optimize 這個
+            ?實際作感覺不太好做 是
+            from top layer to lower layer
+            除了指定的layer 其他的frozen 這樣一職做
+            
+           
+        3> using distill once fine-tune forever
+           representation + logit optimize furst
+           　only consider unlabeling data
+           
+           
+           then
+           with more labled data
+           optmized cross entropy
+        
+  result
+      based on 'text classfication' task for benchmarks,
+  
+      student with distillation 跟bert 同個水平 比student with distillation 還好
+        ?不知道這邊是hard or soft assume 是sort
+      
+      better teacher with bert base / bert large
+          bert large, better teacher, improve student performance but marginal
+          but network saturation, improvment 不大
+          ?不知道這邊是hard or soft assume 是sort
+          
+      soft /hard distillation comparison?
+         hard distillation with amount of unlabled data works pretty well
+         ? but all sort is better, 還需要hard 嗎  
+      
+      soft /hard distillation, classify uncentainty?
+          bert small or larget 都很接近hard distillation 
+          max var 0 to 1
+          代表差異不大
+          
+          
+      distiallation with 500 labeled samples oer class
+         it is effeiction in low-resource-settings
+         also model size 
+         13m v.s bert large(340m)
+         
+       impact of training schedule
+          stagewise optimization with gradual unfreezing is the best
+         
+       
+       
+       extend to 'slot tagging'(name entity distillation)  for benchmarks
+            focus on mulit-lingual
+            teacher : multi-lingual BERT base (102 languages)
+            how to get word embedding
+                cannot use MBERT word enbedding since models are too big
+                ? why not offline 也是可以啊  除非只是為了省cost
+                用single value decompositionSVD 最dimention reduction map 到小的空間
+            
+            distilled student outperfomrs sinlge BERT for extermely low-resource langugage
+              大概有4% 的gap
+              以前別人說bert 一點resource 就行  但是distillation 似乎更好
+              有的language instance 非常少  
+              
+            concurrent works 比較  
+              transformer 的結果proff 你減少layer  會有performance gap
+              RNN 沒有layer 的問題  可以match bert performance,  
+              
+              
+  in conclusion
+      RNN  for students match outperforms
+      stagewise optimization is good for multi-task setting
+      distillation most effective for low resource setting
+      hard distillation extermely effecive with large unlabled data
+      increasing teacher size only results in marginal gain
+      
+  question:
+       student model saturation will increasing teacher model size
+       but 問題是 how teacher model can grow before student model saturated?
+         ? 這個問題不是太懂
+         
+       why student 跟teacher 可以同時improve 有點不直觀?
+       1:27:31
+          這個不懂...
+          似乎跟有沒有pretrainnig 的 stagewise gradual unfreeze 有關西
+       因為總會覺得student 慧根teacher  學道不一樣  因為不同的architecture
+      
+        stagewise gradual unfreeze
+            gradual 
+            unfreeze
+            unfreeze 怎麼work?
+            因為要freeze 才可以proprate 到next layer
+            
+ 'Distillation in NLrep'
+ 1:31:04
+     NLrep
+     natural language representation platform
+     C-DSSM (from bing)
+     https://www.csie.ntu.edu.tw/~yvchen/doc/NIPS-SLU15_CDSSMIntent_poster.pdf
+     
+     
+     there is website
+     
+     student Model Strucutre
+         student一班跟teacher 只有learn from ouput (不管什麼logits respresention)
+         所以彈性很大
+         from easy to complex models
+         1>existing production model
+           這是最prefer 的方式
+           或許是file doamins 可以前進的方向
+             
+         2> sentence encoding + low cost interaction
+            這個只能用在inference tasks for two sentences
+              matching ranking
+              ?不知道為啥但是因該會解釋
+              
+            sentence encoding
+               可以用bert RNN ETC
+                bert 可以用CLS or pooling for encoding 都可以
+            low cost interaction
+               指的就是similarity 的計算
+               可能就是product/ cosine
+               
+               
+             sentence encoing / doc encoidng
+             can be computed offlibe
+             
+             you can approximate neighbr  (ANN) to tto find lcoses
+         3> Lightweight BERT
+            distill teacher model to smaller model
+            3 layers
+            smaller width of encoding
+            initial point
+               you can pick from teacher model
+                or 
+               even middle layer value
+               
+               UniLM
+                  initial point
+                  aonther ongoing model
+                  
+                  
+          speed
+          1>  > 2> > 3>
+     
+     
+    other tricks
+        teacher decoupled with student models so you can use ensembled teacher models
+        teacher to judge unlabled data,  然後student 去近似teacher to judge unlabled data(soft label) 然後用真的labeled data(hard label) fine tune
+        已經是proof 很有用的了
+        
+'From Research to Production and Back : Ludicrously Fast Neural Machine Translation'
+
+1:44:00
+ 
+            
+  
