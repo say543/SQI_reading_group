@@ -410,9 +410,28 @@ a pictures for how mant paramters for many models.
         teacher to judge unlabled data,  然後student 去近似teacher to judge unlabled data(soft label) 然後用真的labeled data(hard label) fine tune
         已經是proof 很有用的了
         
-'From Research to Production and Back : Ludicrously Fast Neural Machine Translation'
-
+'From Research to Production and Back : Ludicrously Fast Neural Machine Translation'    
 1:44:00
+   improve model to ship to production interms of latency, metric
+
+4 * 800 Mb to 100 MB
+29 to 26
+? 29 to 26 number unsure
+  might be matchine translation words oer second but not sure
+
+WNGI 2019 efficiency Shared Task
+  wrokshop
+  
+ 
+profile
+    machine transtion
+    how many million words can be tranalafed per cost on top of AWS?
+    cpu is very cimpetitive in terms of cost compared to GPU
+    
+    using better architecture for student model
+       reduce depth
+    
+    batch pruning
  
             
   
