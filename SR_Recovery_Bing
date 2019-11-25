@@ -5,3 +5,52 @@ RE: Using SR N-best for Bing Search
 email thread with slice
 
 https://web.microsoftstream.com/video/6b800b57-3b5b-4ca6-a354-2eef0da0cadf
+
+
+speech continuation
+  using websocket to connect
+1% queries incomplete within 7 days
+ 目的: 在1% queries 讓user 有機會繼續continution 因為stop resent 的cost 很高?
+ answer. 52% user got bing answer
+    (? 是不是52% of 1% )
+ 
+ question 有沒有數據說在1% 裡面 在apply idea 後  有多少queries supposed to end but mesh with following queries?
+
+current bing if it stops 1% queries, cost is pretty high(maybe architecture wise)
+so here we try to apply sppech continuation
+
+client -  speech continution - speech service
+
+中間曾慧detect client 要continue or end
+也會開啟更多的web socket 如果要prefetch result
+
+what is the direction ..... to Microsoft
+<1>                          2>
+
+<1> , <2> 都會有speech 然後search result
+要combine or wait for <2> 是design choice, 沒有絕對
+
+
+also,
+incomplete query classifier might help to detect if continuing 
+
+using entity , key pharse ('what is', etc...)
+coverage it high enough already
+
+
+Sr recovery
+13:00
+
+metrics
+WER
+WER is an average word error rate among the various speech recognition services on the market. 
+https://blog.deepgram.com/what-is-word-error-rate/
+   ? seems not word base but character base
+   ? but why number is > 1, shouldn't it be percentage?
+SIM
+jaycorden , character level
+
+catastrophic impact
+?新的定義  有點難懂
+關注keyword 這個keyword 跟user experience 有絕對的關西
+ci 發生的probabilty 很高 when WER > 0.5 (因該說正相關所以加了這個來看)
