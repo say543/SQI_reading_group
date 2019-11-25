@@ -417,7 +417,9 @@ a pictures for how mant paramters for many models.
 4 * 800 Mb to 100 MB
 29 to 26
 ? 29 to 26 number unsure
-  might be matchine translation words oer second but not sure
+  BLEU
+  transtion 用的單位記算
+  https://blog.csdn.net/joshuaxx316/article/details/58696552
 
 WNGI 2019 efficiency Shared Task
   wrokshop
@@ -433,5 +435,98 @@ profile
     
     batch pruning
  
+
+
+different student architecture
+     CPU
+        quadratic to linear
+           RNN  it brings lot improve : word tranlsation per second
+           also difrerent bits or cpu does help
+     GPU
+        not help lot when arachiteucture is changed
+        make sure your cpu-side code does not hold back GPU computation
+          becasue GPU will paralize your whole application
+        otherwise you 
+
+
+MADL trained teachers
+
+   dula learning defintion:
+   task : translate english to german (DE)
+       then you train german to english models
+       these models will also provide data for your learning
+       ? not sure how this helps 不知道是哪個langauge 比較少
+       看下面的example 就知道
+       
+   multi agent
+       p.s 跟dual learning 比起來  每一步的model from 1 to N (here example N = 4)
+       original english and german data
+       plus
+       train 4 teachers : english to german
+            this provide synthetic german (DE) data
+       train another 4 teachers : german to english
+            this provide synthetic english data
             
+       use all data to do full traning
+          3 time bigger data
+       to train new MADL trained teachers (english to german(De) )
+          those 不知道是不是最後的students
+   
+   how to distll to students?
+       our approach: increase data size
+       train another 4 teachers : german to english
+          => intrdouce  Gumbei noise data to form synthetic english data
+          ? 沒有說得很清楚
+          ? 也沒有說到student architeucte architecture
+         
+       proof 說這樣的student model 可以追上teacher
+   knowledge distillation result
+      T-MADL + 4NBFT  很接近原本的teacher 28.9
+      ? 不知道代名詞是什麼
+      
+   cpu optmimization
+       matrix , check commputation part
+       different bits cpu
+        GEMM, SIMD
+        
+   reduced decoer depth
+       6 layer transformer to 3 layer
+       speed up but lost some metric
+       
+   questions about cpu
+       1>  batch szie for cpu optimiztion. does it support varible size batch mode?
+            yes it does support any batch size
+       
+       2> for gpu one , 32 to 16it
+          lost half precsion but speed up is not 2 times 
+          (but it cpu it is consistent 2 times faster)
+          why is that? 
+            cpu 的32 bit not pure cpu 32. it mixes 32 / 16 bit operations
+            
+  2:09:54
+  Q&A
+  which data should be used for teacher?  for student?
+  test specific
   
+  architecutre secific
+     transfomer
+     GPU
+     might be different
+  
+  has any anyone tried multiple features to train to reduce layers of models(like bert)?
+  no practical answer
+  
+  
+  multiple teachers
+    MT-DNN : microsfot paper i guess?
+    task-specifc model might not good
+    
+    mutli-task student model you can make it great
+    
+  
+  
+  
+  
+  
+   
+       
