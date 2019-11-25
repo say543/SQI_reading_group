@@ -524,7 +524,12 @@ MADL trained teachers
     mutli-task student model you can make it great
     
   
-  
+  distillation
+    sort of regulation to prevent overfit
+    
+    might be distillation is similar to make human judge error more smooth so student can learn and perform well
+       this claim might apply to hard distillation as opposed to soft distillation
+       ? not sure where this claim comes from
   
   
   
