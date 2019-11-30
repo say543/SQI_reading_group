@@ -3,12 +3,65 @@ https://web.microsoftstream.com/video/da22e7c5-c273-47d7-8147-606d5fdd505f
 
 listen up to 30 minutes  starting from 29 minutes is good
 
-only precision recall
+目的: 利用一個train model (with label data, offline)  來預估在一個unlabel 的data set(也就是類似eye-off data but in production) 的performance 多好 by estimator
 
-not just 
-cold start 
-29:30
+ye-yi 問題?
 
-but also
-model A  model B
+但是這樣在cold start 有幫助
+
+但是一班的model1 -> model2 有幫助嗎(most cases)? 
+   yes . 因為model1 model2 你可以跑一樣的prod duction traffic eye off data, 所以你可以知道model2 有沒有更好
+   但是你只能知道bullpakr number , 沒有辦法pie/ bucketized detail
+   model1 : 81%
+   model2 : 82%
+   you cannot say 82% model2 is better than 81% because of eye-off data
+   
+
+only precision cares here
+so consider those 
+1>alignment error
+tag extra word or lack of one work
+2>over tagger error
+no tag => tag
+3>
+slot type error
+<wrong type> error
+? 但是第三個case 就每個slot 來講  也是negative case 也可以算是recall 我猜?
+
+
+26:14
+for this snorkel pipeline
+does it amplify the issue that that two judgesr judge them differently or in fact it will help reduce? 
+ans: for frequency one, it will reply on context pattern analysis(pulled by statistical result)
+so it should help
+ ? but for infrequenct case it probably will not help much.
+
+
+27:27
+sample idea by walking through examples
+<message> slot , open text
+  這邊因該是用eye-on data 來模擬狀況
+  ? 如果沒有pattern 只有search query , very short 感覺不太能用
+  ? 這跟在 train  的時候  加到pcfg or 額外的pattern for feature 似乎公用很接近
+  
+  'Message to'
+  'Message'
+  snorkel backend 會建立這種的correlated function 然後來改善result
+  ? 可能要到實際的detail 才有意義
+  
+  ye-yi 問題
+  如果model 並沒有做好  true precision 沒有很高  這樣的加signal 有用嗎?
+  (這個問題在colde start 會發生的)
+  ans: 
+  這種實驗還沒做  但是因為precision 低, fp 很多  反而estimated precision 可以更focus  extra pattern 來幫助model 解決這些wrong prediction
+  
+  ?這個還不太懂
+  另外  如果precision model 已經很高  把所有的points 都assign positive 就可以逼近這個precision model 也不太有意義
+  
+  
+38:30
+above seems promising 但是會有一些其他的結果要注意的嗎?
+  
+  
+<contact_name>
 
