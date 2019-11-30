@@ -59,9 +59,19 @@ sample idea by walking through examples
   另外  如果precision model 已經很高  把所有的points 都assign positive 就可以逼近這個precision model 也不太有意義
   
   
-38:30
-above seems promising 但是會有一些其他的結果要注意的嗎?
   
   
 <contact_name>
+
+38:30
+above seems promising 但是會有一些其他的結果要注意的嗎?
+ eg:
+ 'message to' 
+    的所有case
+    有些case 是true positive
+    有些case 是false positive
+    加進去這些signal 總是會有一些東西是有問題的
+    另外pattern 在不同的dataseet 可能不是balance
+       ? 這個問題因該是data sampling 的問題  我覺得不用worry
+    怎麼解決呢?
 
