@@ -90,21 +90,54 @@ above seems promising 但是會有一些其他的結果要注意的嗎?
  for precision estimator
     what metrics being used to do estimation?
       focus on precision space
-      using
+      
+      using those to callcaute metric
       col1: model prediction
       col2: estimator output
          這個因該是snorkel 的
       col3: ground true lable
       p.s each scenrio 要col1 / col2 /col3 輸出
       
-      estimator precision
+      1> estimator accuracy
           true : estimator output == ground true label == 1
           all scenarios 一起算precision
+          用來判斷estimator 有多正確
+          
+          
+      2> true precision
+          true : model output == ground true label == 1
+          all scenarios 一起算precision
+          
+      3> estimated precision
+          這個是當作沒有ground truth label
+          所以適用model output v.s estimator output 
+          true : model output == estimator output
+          == 1
+          all scenarios 一起算precision
+          
+      goal : "estimated precision" should be as close as "true precision"
+      set "estimator error" = "true precision" - "estimated precision"
+      ee
+         根據圖的解釋 只跟一些cases 有關西
+         (考慮precision space)
+         這個case 比較難想
+         曾經estimator error 
+             model output == 1  
+             estimator output  == 0
+             ground true label == 1
+         減少estimator error
+             p.s 這個case 
+             model output == 1  
+             estimator output  == 1
+             ground true label == 0     
+             
+             
+       in conclusion:
+                  希望estimated accuracy 要高   estimator error 要在一個可以accpetable 的range
+         
       
-      
-      each scenrio 
-      
-      p.s 但是這樣是不是只能offline estimator  ? 
+
+bridge the gap?
       
     
    
