@@ -1,4 +1,4 @@
-
+<done>
 https://web.microsoftstream.com/video/da22e7c5-c273-47d7-8147-606d5fdd505f
 
 listen up to 30 minutes  starting from 29 minutes is good
@@ -118,10 +118,11 @@ above seems promising 但是會有一些其他的結果要注意的嗎?
       goal : "estimated precision" should be as close as "true precision"
       set "estimator error" = "true precision" - "estimated precision"
       ee
-         根據圖的解釋 只跟一些cases 有關西
+         根據圖的解釋 只跟兩個 cases 有關西
+         一個case 增加error 一個case 減少error
          (考慮precision space)
          這個case 比較難想
-         曾經estimator error 
+         增加estimator error 
              model output == 1  
              estimator output  == 0
              ground true label == 1
@@ -133,12 +134,78 @@ above seems promising 但是會有一些其他的結果要注意的嗎?
              
              
        in conclusion:
-                  希望estimated accuracy 要高   estimator error 要在一個可以accpetable 的range
+                  希望"estimated accuracy" 要高   "estimator error" 要在一個可以accpetable 的range
          
       
 
 bridge the gap?
-      
+       step1: <covered in this lecture>
+           focus on what current model does not do well  (而不是利用estimate error 來幫助build another model)
+       step2: <not covered in this lecture>
+           replying on more external signals to help build another model
+           
+           
+47:25
+with above step1 and estimated accuracy . estimator error, how does it perform in our evaluation set?
     
+    
+    observation
+    message slot
+       most error align errors
+       BERT might be a way to help this . need to wait haoda's experiment
+       
+    contact_name
+       lexicon is the key( you can treat multiple grams as a single lexicon as well) and we rely on n-gram features
+       p.s both these can be applied to other slots
+       this does make sense
+       
+    destination platform
+       most from inconsistency slot annotation
+       file_action_context 跟這個很像
+       
+     relationship_name
+       跟contact_name 常常衝突
+       現在files domain 沒有  以後可以參考
+       
+   
+   
+ 50:00
+ 目前test data 沒有很多  用deep learning model  用處不大
+ 但是以後因該是有幫助的?
+ 
+ 51:00
+ current work
+   aether pipeline
+   can support label data and unlabel data
+   
+   
+ 52:00
+ next step
+   more lingustic features
+   embedding feautre
+      ? 這個因該是可以想一想
+      
+      
+ question
+    q: here focus on slot precision can it be extend to domain and intent?
+    YES
+    q: how to deal with cold start?
+    brainstorm patterns to generate  (因為是eye off 我猜  只能這樣做)
+    ? search world i do not think it works
+    
+    q: how about the reacll
+      因為你可以直接不做prediciton 這樣predition 跟recall 都可以很好
+      recall problem is harder
+      ? 不懂為啥
+      
+    q: 認為estimator 的erorr 大部分不是來自於 align error 而是type error?
+       對於type erorr 的detect 能力比較強
+       但是可能實際model 的error  大部分來自於align error
+       可能要想想  怎麼extend 來cover
+       沒有answer 因為影片已經結束....
+    
+   
+   
+   
    
 
