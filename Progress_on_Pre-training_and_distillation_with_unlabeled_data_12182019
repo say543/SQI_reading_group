@@ -1,4 +1,16 @@
 
+有對應的slide 名稱
+
+p4 有papter
+Lnil 是teacher 的cost function
+   用少量的label data
+Lword 是student 的cost function
+   用相對大量的in doamin data
+
+基本上在兩個之間做regulaziation
+
+
+
 更detail 的content for haoda experiement 
 
 
@@ -12,3 +24,6 @@ in-domian
 用QAS label 跑一下因該可行    
 
 https://web.microsoftstream.com/video/c4ca029c-e31a-43c5-957f-038426177d2b
+
+
+
