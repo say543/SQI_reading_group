@@ -164,3 +164,95 @@ attention over the sequence of encoder activations
 the current step. In our preliminary experiments,
 we found the latter option to perform better and
 converge faster, as it does not require learning additional encoder-decoder attention weights.
+
+
+5 Experiments
+Sentence Fusion, Split and Rephrase, Abstractive Summarization, and Grammatical Error Correction
+4 taks 
+
+strong baselines based on Transformer where
+both the encoder and decoder replicate the BERTbase architecture
+用transformer 當作base line
+
+
+5.1 Sentence Fusion
+Sentence Fusion is the problem of fusing sentences
+
+To cope with this, we introduce the SWAP tag, which enables the model to flip
+the order of two input sentences into a single coherent sentence.
+   SWAP operation 是為了這個而存在的
+   
+
+
+
+2 metrics
+Exact score: the percentage of exactly correctly predicted fusions,
+
+SARI:
+average F1 scores of the added, kept,
+and deleted n-grams.2
+   ? 
+
+vocabulary size
+   大概500 會接近平緩
+
+result discussion
+   有考慮不同training set 的結果
+
+
+5.2 split and rephrase
+
+
+2 metrics
+Exact score: the percentage of exactly correctly predicted fusions,
+
+SARI:
+average F1 scores of the added, kept,
+and deleted n-grams.2
+
+5.3 Abstractive Summarization
+The task of summarization is to reduce the length
+of a text while preserving its meaning.
+
+
+3 metrics
+Exact score: the percentage of exactly correctly predicted fusions,
+
+SARI:
+average F1 scores of the added, kept,
+and deleted n-grams.2
+
+ROUGE-L:
+
+
+5.4 Grammatical Error Correction (GEC)
+GEC requires systems to identify and fix grammatical errors in a given input text.
+
+
+2 metrics
+precison and recall
+? why this usin precison and recall
+
+5.5. inference time
+要說明他的method 在inference time 上面的幫助, 主要來自於decoder strcuture 的改變
+This difference is due to the fact that LASERTAGGEr
+using a 1-layer decoder (instead of 12 layers) and
+no encoder-decoder cross attention. We also tried
+training SEQ2SEQBERT with a 1-layer decoder but
+it performed very poorly in terms of accuracy. F
+
+
+5.6 qualitative evaluation
+We inspected the respective worst predictions from each model according
+to BLEU and identified seven main error patterns,
+
+This illustrates that LASERTAGGER is less prone
+to errors compared to the standard seq2seq approach, due to the restricted flexibility of its model.
+Certain types of errors, namely imaginary words
+and repeated phrases, are virtually impossible for
+the tagger to make. The likelihood of others, such
+hallucination and abrupt sentence ending, is at least
+greatly reduced.
+   ? 在想是不是rule 影響 or decoder strucutre
+
+
