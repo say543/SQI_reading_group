@@ -1,7 +1,24 @@
 https://arxiv.org/pdf/1909.01187.pdf
+https://microsoft.sharepoint.com/teams/sqiread/_layouts/OneNote.aspx?id=%2Fteams%2Fsqiread%2FSiteAssets%2FSQI%20Paper%20Reading%20Group%20Notebook&wd=target%28Annotated%20Papers.one%7CF1AE8FA6-36FF-40AA-864A-897493048FE8%2FEncode%2C%20Tag%2C%20Realize%3A%20High-Precision%20Text%20Editing%7C46F3557A-933B-483F-8875-DBB1EC343FDD%2F%29
 
 has code samples
 
+discussion:
+    oepration precedence
+    SwAP might be higher precedence
+    
+    model trying to learn words with phrase as representation (這個就是 supervise learning 的label 的表示法)
+    然後realize 就是pure rule (not ml) 處理operation 生成sentence
+    
+    目前只focus two tags
+    
+    
+    beam search
+    要研究一下  又出現了
+
+
+    why inference fast?
+        volcabulary size 500 si relately small compare to all other volcaculatrs to infere from BERT
 
 This
 approach is evaluated on English text on four
@@ -22,7 +39,7 @@ of rules to convert tags into the output text tokens.
 
 
 
-3.1 taggin operations
+3.1 taggin operations 
 Our tagger assigns a tag to each input token. A [tag]
 is composed of two parts: a [base tag (B)] and an [added
 phrase(P)]. The base tag is either KEEP or DELETE,
