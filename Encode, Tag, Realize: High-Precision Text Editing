@@ -1,1 +1,166 @@
 https://arxiv.org/pdf/1909.01187.pdf
+
+has code samples
+
+
+This
+approach is evaluated on English text on four
+tasks: sentence fusion (合併), sentence splitting(分離), abstractive summarization, and grammar correction.
+
+
+learning a text editing model
+
+
+
+
+
+LASERTAGGER, consists
+of three steps (Fig. 1): (i) Encode builds a representation of the input sequence, (ii) Tag assigns edit
+tags from a pre-computed output vocabulary to the
+input tokens, and (iii) Realize applies a simple set
+of rules to convert tags into the output text tokens.
+
+
+
+3.1 taggin operations
+Our tagger assigns a tag to each input token. A [tag]
+is composed of two parts: a [base tag (B)] and an [added
+phrase(P)]. The base tag is either KEEP or DELETE,
+which indicates whether to retain the token in the
+output. The added phrase P, which can be empty,
+enforces that P is added before the corresponding
+token. P belongs to a vocabulary V that defines a
+set of words and phrases that can be inserted into
+the input sequence to transform it into the output.
+
+表示法
+P^B
+
+The total number of unique tags is equal to
+the number of base tags times the size of the phrase
+vocabulary, hence there are ≈ 2|V | unique tags.
+Additional task-specific tags can be employed
+
+
+base tag 在不同的cases 還有很多種
+SWAP
+  can only be applied to the last
+period of the first sentence (see Fig. 2). This tag
+instructs the Realize step to swap the order of the
+input sentences before realizing the rest of the tags.
+PRONOMINALIZE
+  to allow for replacing entity mentions with the appropriate pronouns,
+
+3.2 optimizing phrase vocabulary
+
+phrase volcabulary
+The phrase vocabulary consists of phrases that can
+be added between the source words.
+    ? 這句不是太懂 感覺是要expanf
+希望不要太大  也不要太小
+這個problem 是NP -hard
+   可以reduce 成
+   This problem is closely related to the minimum k-union problem which is NP-hard
+   
+   so 這邊也是heuristic?
+
+method:
+we first align each source text s
+from the training data with its target text t. This is
+achieved by computing the longest common subsequence (LCS) between the two word sequences,
+which can be done using dynamic programming in
+time O(|s| × |t|). The n-grams in the target text
+that are not part of the LCS are the phrases that
+would need to be included in the phrase vocabulary
+to be able to construct t from s.
+? 這邊的n-gram 不知道n 多長    
+
+// 也用了top k 
+we adopt the following simple approach to construct the phrase vocabulary: sort the
+phrases by the number of phrase sets in which they
+occur and pick ` most frequent phrases. T
+
+// 也用了greedy
+always
+selecting the phrase that has the largest incremental
+coverage
+? 這邊greedy 的內容不是太懂
+
+
+3.3
+converting training targets into Tags
+  ? output 的結果就是最後的label 還是input training data?  感覺是input data 因為後面有training targets
+     
+  
+iterates over words
+in the input and greedily attempts to match them
+(1) against the words in the target, and in case
+there is no match, (2) against the phrases in the
+vocabulary V . This can be done in O(|s| × np)
+time, where np is the length of the longest phrase
+in V , as shown in Algorithm 1.  
+    ? 這個method detail 還不是太懂
+    
+    
+The training targets that would require adding
+a phrase that is not in our vocabulary V , will not
+get converted into a tag sequence but are filtered
+out.
+    目的要 filtering  low-quality targets
+    but
+    轉換完還ˋ有可能是一個好的結果  只是不是optimum  as target
+    
+    
+3.4 realization
+After obtaining a predicted tag sequence, we convert it to text (“realization” step).
+ 把phrase 跟base 真正轉成句子中的token 可能會加新的
+ 
+ For the basic tagging operations of keeping,
+deleting, and adding, realization is a straightforward process.
+    
+PRONOMINALIZE 
+   For this tag, we would need to look up the gender of
+the tagged entity from a knowledge base.
+    ? 這個tag 的功能還不是太懂
+    
+    
+    realziation 也可以apply 一些hard rules 防止問題
+      ? 有點像NLP 的 rules
+
+
+4 Tagging Model Architecture
+an
+encoder, which generates activation vectors for
+each element in the input sequence, and a decoder,
+which converts encoder activations into tag labels
+   基本上也是seq2seq 的model
+   因該有用attention 我猜
+   
+   
+ encoder
+     BERT Transformer model
+     用base
+ decoder
+     不用BERt 的 decoder
+     BERT decoder:
+     the output tags are generated in a single
+     feed-forward pass by applying an argmax over
+     In this way, each output tag is
+predicted independently, without modelling the dependencies between the tags in the sequence.
+     the encoder logits. 
+         ? 這個的idea 不太懂
+         
+     這邊用的
+     powerful autoregressive decoder
+     At each step, the decoder is consuming the embedding of the previously predicted label and the activations from the encoder
+         ? 這個有什麼特別的嗎  單存的transfomer 內部好像也是這樣
+         
+         
+ There are several ways in which the decoder can
+communicate with the encoder: (i) through a full
+attention over the sequence of encoder activations
+(similar to conventional seq2seq architectures); and
+(ii) by directly consuming the encoder activation at
+the current step. In our preliminary experiments,
+we found the latter option to perform better and
+converge faster, as it does not require learning additional encoder-decoder attention weights.
