@@ -15,11 +15,40 @@ discussion:
     
     beam search
     要研究一下  又出現了
+    
+    hallucinations 
+    要研究一下  又出現了
 
 
     why inference fast?
         volcabulary size 500 si relately small compare to all other volcaculatrs to infere from BERT
-
+        
+    summarization
+        用microsfot dataset 但是只有2句子  summization 的job 是相對easy v.s normal summarization
+    
+    metrics selection
+        就是每個region 用什麼metric
+        so 不同的job 
+        
+        
+    40% trainngi data
+        ? does it cover mispelling ? probably not
+        
+        
+     table 7
+        good table to summarize erros
+        
+     有好的paper 推薦
+        
+        felix 的 reorder arbitrarilu 
+        
+        
+     realize?
+        really esay to control
+        
+     challeng
+         how to get pharse it si hard
+     
 This
 approach is evaluated on English text on four
 tasks: sentence fusion (合併), sentence splitting(分離), abstractive summarization, and grammar correction.
