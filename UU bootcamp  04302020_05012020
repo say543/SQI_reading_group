@@ -1,4 +1,6 @@
+data source
 
+https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmicrosoftapc.sharepoint.com%2Fteams%2FCLU705-UUScienceBootcampSeries%2F_layouts%2FOneNote.aspx%3Fid%3D%252Fteams%252FCLU705-UUScienceBootcampSeries%252FShared%2520Documents%252FUU%2520Science%2520Bootcamp%2520Series%252FMSAI%2520UU%2520Science%2520Team%2520Bootcamp%26wd%3Dtarget%2528April%25202020%2520Content.one%257C8C11BB3A-2598-488C-9089-34D99634D329%252F%2529&data=04%7C01%7CChiehChun.Chang%40microsoft.com%7Ccb7e0f527caf433e18d008d7e7b97f0c%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637232656340152089%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C-1&sdata=ACc8qjaCyy%2F%2BPzq465plM%2F6FfQghUBzHYrb2abhtI7Q%3D&reserved=0
 
 <overview>
 
@@ -38,8 +40,89 @@ but future is to use heron project data to do compliant trainnig
 
 conflict examples 
 
+raise to pm
 
 
+<mlg>
+having import defintion
+有import 的說明  這個很少
+a good template
 
+bucketized level can be used
+
+timex entity level to query level
+
+tag feature
+string feature
+  5 個的format說明
+  
+  string 就是字串  tag 是number
+
+body stream 會有說 tag feutare 數目 , string feature number
+
+
+pipeline
+  SVM 幾steps
+  
+  
+memory
+   <good discussion>
+   deep learning model , memory
+   loop the same 
     
-
+   if input is different
+       might duplicate memory consumption
+    
+   how to lookup cache
+   
+特書featurizers 有mapping 到analyzed query
+   eg: slot,  intent domain 
+   some how transformation
+   
+   
+<model best practice>   
+  calendar deep dive
+  
+      selection section
+      
+  take common domain as input
+      there is a featurizer being used 
+      
+      
+  people
+      entity lexicon
+      
+      有一些randomization 的過程
+      
+      
+   minwoo
+      aether workspace
+   
+      aether using CMF
+      
+      perf  evaluation (by aether)
+          more conservation latency  since user machine is more powerful
+          different machines then you can collect more different data
+      some good aether good models
+      
+      
+      haoda question not fully understand
+  <AJ how to write FST>  
+  
+      https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmicrosoftapc.sharepoint.com%2Fteams%2FCLU705-UUScienceBootcampSeries%2F_layouts%2FOneNote.aspx%3Fid%3D%252Fteams%252FCLU705-UUScienceBootcampSeries%252FShared%2520Documents%252FUU%2520Science%2520Bootcamp%2520Series%252FMSAI%2520UU%2520Science%2520Team%2520Bootcamp%26wd%3Dtarget%2528Planning.one%257CA745A153-EA3F-4B6E-8F16-9163BFE64932%252FApril%25202020%257C13FF0B30-1E6A-4036-88F5-99FACF7325D6%252F%2529&data=04%7C01%7CChiehChun.Chang%40microsoft.com%7Ccb7e0f527caf433e18d008d7e7b97f0c%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637232656340152089%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C-1&sdata=LNzo6xE0Q9wrkYXS%2B2whlDndj%2FdadPInoBvX%2FuPZQ7k%3D&reserved=0
+      context discussion
+      
+      json compiles
+      
+      transduer mode
+        preprocessor
+        replacement by fst
+        
+        pmatch to do 
+        可以cusotomize 自己要的
+        
+      list()  function
+      
+      ins()  function
+        for lexcion packing
+        can be used
