@@ -94,6 +94,11 @@ memory
       
       有一些randomization 的過程
       
+      目的是:
+      已知tenant lexicon,  希望在trainnig fit 到lexicon  0 , 0,1 , 0.2.....1.o  amount 0, 100, 200, 300 , 400....
+      台turn model 但是這個是已知tenant lexicon
+      
+      
       
    minwoo
       aether workspace
@@ -126,3 +131,70 @@ memory
       ins()  function
         for lexcion packing
         can be used
+  <zhiguo query expansion>
+  
+      除了synthetic data 還有別的可以用
+      
+      query expansion and lexicon
+         跟我的依樣
+         
+      
+      query 
+          simialr word synnopsm
+          wordnet . gloVe , LAMA
+          
+              wordnet
+              不能只給nono or verb
+          nltk
+          
+          glove
+          
+          mask
+          LAMA open source
+          
+          
+          using similaritiy calcultion
+          to filter queries
+          
+          verb避免replace
+          有辦法可以看是不是verb
+          
+          
+          usng GPT-2 tp calucate sentence perpeleixity
+          using cosine similarty to calcuate sentene similarity
+          
+          
+       random word replacement
+          for negative queries
+          
+          where is xxxx
+          
+          
+      another microsoft module
+      [4:24 PM] Yuancheng Tu
+    
+Zhiguo, the WNsynonym Augmentation aether module I mentioned is here: eece1109-70ff-4e1d-ac81-fbd87ede79ec
+The inputs to this module are:
+
+
+	
+	
+Generic TSV file for unaugmented data;
+	
+	
+	
+Float parameter alpha, which controls the percentage of the words in each sentence to be replaced (0.2 means you want to replace 0.2 percentage of words in each sentence);
+	
+	
+	
+Int parameter "num_aug" to indicate how many augmented sentences are needed (default is two, you can augment as many as you want) 
+	
+
+
+(2 liked)​[4:27 PM] Yuancheng Tu
+    
+It is very simple to use and one previous demo experiment for this is here: aether://experiments/570090bb-90b3-4fb6-a2b6-8cf55a62ff97
+​[4:31 PM] Yuancheng Tu
+    As of the recursive K-means, it works the best when input dimension is small, for example, when using Glove-100; For Bert related model, for example, with Bert base 3072 dimension, it works well even with simple Kmeans algorithm
+
+          
