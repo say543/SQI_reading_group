@@ -1,3 +1,6 @@
+
+[day 1]
+
 data source
 
 https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmicrosoftapc.sharepoint.com%2Fteams%2FCLU705-UUScienceBootcampSeries%2F_layouts%2FOneNote.aspx%3Fid%3D%252Fteams%252FCLU705-UUScienceBootcampSeries%252FShared%2520Documents%252FUU%2520Science%2520Bootcamp%2520Series%252FMSAI%2520UU%2520Science%2520Team%2520Bootcamp%26wd%3Dtarget%2528April%25202020%2520Content.one%257C8C11BB3A-2598-488C-9089-34D99634D329%252F%2529&data=04%7C01%7CChiehChun.Chang%40microsoft.com%7Ccb7e0f527caf433e18d008d7e7b97f0c%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637232656340152089%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C-1&sdata=ACc8qjaCyy%2F%2BPzq465plM%2F6FfQghUBzHYrb2abhtI7Q%3D&reserved=0
@@ -202,3 +205,199 @@ It is very simple to use and one previous demo experiment for this is here: aeth
   multiple turn hotfix
   
   quality gating 吵了很久
+
+
+
+[day 2]
+
+[tao] how to test
+
+
+mdp  sip   compliant  avalilbe through heron but needs to do lots of filters
+
+multi turn queries can raise request
+
+crowdsource example
+
+big change so i can request
+
+
+<haoda, YC>
+AML
+
+aether cannpt turn on hyper parameter
+
+MSAI no deep learning to QAS,but there is something caryying on
+polimar
+
+compliance discusssion about B2
+
+studio . azure shared
+regresitration has been shared
+
+有non compliant substription
+?  我好向沒有選
+
+azure storage account is necessary to store data
+
+good plug in
+
+azuer extention
+
+
+setup environment
+ cache mechnism
+ channig packge then it might be different
+ 
+ 
+hyper parameter tuning
+
+
+dependency packages
+  aether to submot for dependency packages
+  
+  
+ compliant-lu  repo
+ 
+ 
+ experiement study
+ 
+ 
+ share data one case
+ 
+ auzre document
+ 
+ <Raj>
+ deploy models
+ 
+ brownbag
+ 
+ 
+ dashbarod after dpeloyment to check
+ 
+ 
+ search placeholder
+  SDF_v2 -> MSIT -> SIP -> WW
+ 
+ deployment tracker
+    show where it is 
+ 
+ memeoy
+     met1:
+       normal way
+     met2 :
+         memory delta
+     met3:
+        two batch QAS portal  there is memory colmun but usually suggeting going with met1 / met2
+	 
+	
+	
+  capacity requests
+     only if you onboard a new models
+  
+  
+  there is picutre for that
+  
+  MSSearch
+    for world wide ring 
+    
+  Torus tool
+     sinlge machine testing 
+     
+     
+   a nice way to track rollowing by dataset <must see>
+   	dataset filter
+	dataset number doj>
+	   change list number , change it (not batch id on portal)
+	   
+	one machine does not roll out successfulyly, how can we tell?
+	
+	
+ <minwoo>
+ A/B flight
+ good link for A/B test flight
+ 
+ no covered in search assitant
+ 
+ same as what i learnt from Yue
+ 
+ 
+ join approval group 
+    highly join
+    
+    
+ a way to setup experiement 
+     logical roll out
+         alwawys 100, not real deployment
+	 easy to roll back  .15 rolls back
+	 discuss?
+	    two ways rolling out
+	    how to reduce impact?
+	    engineer flight
+	       ?
+	    our teams flight
+	        ?
+	    
+     A/B test
+     
+     
+     approval group
+        one person can only be one approval group
+	
+      
+      cortan score card
+          only latency
+	  
+	  you can select range
+	  
+	  
+  <yue rak>
+  
+   part 1:
+   assistatnt
+   debug
+   
+   kusto queries
+   
+   ranking socre queires
+   
+   having hotfi format
+   
+   
+   clustudio promote example
+   
+   
+   part 2:
+   search
+   usualy not  queries unless users provide 
+   
+   
+   
+   runtime debug
+   
+   <eric> 
+   ranker
+     hard to train
+      so might ne havnig reranker + selector
+     
+   reranker?
+    to differential web navtiaon and web
+   
+   rannker envience
+      features 
+   
+   model:
+   fast rank
+      fask rank is easy to adape to new domains not yet being trained
+      
+      can add decision to final result
+      
+   gradient boost descisino tree
+   
+   features
+     general
+     
+   selector
+      rule based selector
+      added by STCA team
+   
