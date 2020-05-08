@@ -264,6 +264,41 @@ AML slice
 https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fmicrosoftapc.sharepoint.com%2Fteams%2FCLU705-UUScienceBootcampSeries%2F_layouts%2FOneNote.aspx%3Fid%3D%252Fteams%252FCLU705-UUScienceBootcampSeries%252FShared%2520Documents%252FUU%2520Science%2520Bootcamp%2520Series%252FMSAI%2520UU%2520Science%2520Team%2520Bootcamp%26wd%3Dtarget%2528Planning.one%257CA745A153-EA3F-4B6E-8F16-9163BFE64932%252F%2529&data=04%7C01%7CChiehChun.Chang%40microsoft.com%7C7185b1ddfd424e04d57308d7ee289205%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637239730337331959%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C-1&sdata=2TTmmfjB0ZBZvSN%2B5k9wYfaZKu9t0lIDxGi1RAab85s%3D&reserved=0
 video
 
+first time provides AML acconut and choose current subscription
+non-compliant MSAI+SI
+
+20:00:00
+experiment
+using  DevExperiementation
+future we might create our owner workspace
+
+same workspace people can share other
+discusss in the future
+
+up-right side
+download config file
+used in your python SDK
+
+{
+   "subscription_id" : 
+    xxx
+    xxx
+}
+
+Azure storage account
+
+create new storage account
+https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account
+
+it is needed if you job is too large, so locally will be very slow
+https://microsoft.sharepoint.com/teams/CortanaCore/_layouts/15/Doc.aspx?sourcedoc={6d6ae133-c9c8-400d-bfd8-ae8feec6ff9f}&action=edit&wd=target%28LU%20Modeling%20and%20Partners%2FCommunication.one%7C05355131-d153-4b5e-953b-c6c8330aecd7%2FAzure%20ML%20storage%20account%7C614e6919-6db6-40a2-aea1-0f442b02cb96%2F%29
+? but i cannot create account and find this resource group name 
+Resource group name
+AML_Playground
+
+
+
+
 aether cannpt turn on hyper parameter
 
 MSAI no deep learning to QAS,but there is something caryying on
