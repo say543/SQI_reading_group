@@ -326,6 +326,8 @@ create datastore called chiecha_datastore
 access key 要從ms.portal.azure.com  account 裡面的access key 來copy
 
 
+
+then 就可以開始notebook 然後submit job
 notebooks
 0:35:24
 
