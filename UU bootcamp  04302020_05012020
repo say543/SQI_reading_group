@@ -305,6 +305,25 @@ storage 要選azure blob storage (雖然one note 不是這樣寫)
 目前已經建好
 chiecha
 
+然後必須要建一個default container
+可以用
+https://ms.portal.azure.com/
+or 
+用這個app create 更快一些
+要安裝
+https://azure.microsoft.com/en-us/features/storage-explorer/#getting-started
+左上角的人要login credentail veriy -> pop up 一堆  然後點apply
+左上角的setting ->  'Non-compliant MSAI+SI Experimentation' -> storage acconuts -> chiecha -> blob containners -> 'container name you create'
+
+
+
+datastore link
+
+likn 你的datastore 的container
+https://microsoftapc.sharepoint.com/teams/CLU705-UUScienceBootcampSeries/_layouts/15/Doc.aspx?sourcedoc={09203e35-0832-4c48-9f93-2909076b9b25}&action=edit&wd=target%28April%202020%20Content.one%7C8c11bb3a-2598-488c-9089-34d99634d329%2FCreate%20Azure%20ML%20Storage%20Account%7C6164290e-b658-4e19-8238-06bbfbf45267%2F%29
+create datastore called chiecha_datastore
+
+access key 要從ms.portal.azure.com  account 裡面的access key 來copy
 
 
 notebooks
