@@ -300,6 +300,10 @@ AML_Playground
 for non-compliant AI+MSAI experiment
 The client 'chiecha@microsoft.com' with object id '1f1d1c30-d0c2-4ee0-9f1f-6d25e6f01577' 
 does not have authorization to perform action 'Microsoft.Resources/deployments/validate/action' 
+要加入MSAI Azure DevExp security group
+storage 要選azure blob storage
+目前已經建好
+chiecha
 
 
 
