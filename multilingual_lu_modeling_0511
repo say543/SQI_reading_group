@@ -1,0 +1,17 @@
+
+
+
+
+
+Bing's langauge detection module
+https://microsoft.sharepoint.com/teams/WebDataPlatformHelp/Pages/Bling.aspx
+
+
+using BERT output as feature
+
+CLS for domain
+
+token hidden state for slot tagging
+
+
+universal/
