@@ -332,6 +332,20 @@ notebooks
 0:35:24
 
 how about to submit a job?
+
+
+data sotre 要自己import (if registered by protal already) 
+from azureml.core import Datastore
+ds = Datastore.get(ws, 'chiecha_datastore')
+
+然後可以用
+microsoft azure storage explorer 來看data for blob 然後砍檔案
+
+
+
+pytorch estimator
+https://docs.microsoft.com/zh-tw/azure/machine-learning/how-to-train-pytorch
+
 this is example for submitting a job
 https://msasg.visualstudio.com/LanguageUnderstanding/_git/compliant-lu?path=%2Fnotebooks%2FAzureML_deep_dive.ipynb&_a=preview
 
