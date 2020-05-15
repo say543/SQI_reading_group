@@ -10,6 +10,15 @@ https://microsoft.sharepoint.com/teams/WebDataPlatformHelp/Pages/Bling.aspx
 using BERT output as feature
 
 CLS for domain
+CLS SEP in bert model 說明
+https://zhuanlan.zhihu.com/p/46652512
+Token Embeddings是词向量，第一个单词是CLS标志，可以用于之后的分类任务
+Segment Embeddings用来区别两种句子，因为预训练不光做LM还要做以两个句子为输入的分类任务
+這個link 有稍微說明一下
+
+
+
+
 
 token hidden state for slot tagging
 
