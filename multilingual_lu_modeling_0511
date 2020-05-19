@@ -1,6 +1,6 @@
 
 
-
+part 1:
 
 
 Bing's langauge detection module
@@ -24,3 +24,102 @@ token hidden state for slot tagging
 
 
 universal/
+
+
+
+part 2:
+05182020
+
+facebook dataset
+
+slot tolen f1?
+less senstive to boundary
+
+linear nmuber
+new day to caluclate slot precision and recall
+
+table
+
+find turne english (XMT might use English and Machine translatate data(english tranlsated to another language  多一個langauge 資料加倍)  )
+zero-shot on spanish
+
+
++MT?
+why MT does not contribute good to english?
+
+claims having noise
+
+
+transformer 3
+mbert 12
+XLM 12
+
+
+zero shot: no native data
+
+
+unverisal model v.s langauge-specifiy model
+using multilanguage dataset to evaluation
+
+
+
+how to ship model?
+knowledge distillation
+
+only use output teachere
+discussing what should be reduced.
+
+internal hidden size: feedforward size
+
+
+unlabeldata is for distilliation
+
+
+soft hard?
+
+
+paramter to control two teps
+
+
+model side redcutrion?
+memory size no test
+latency
+200ms to 50ms (7 domains in FR.)
+
+
+processofr for BPE tokenization
+
+wordpiese tokenaztion another processor
+
+
+traningi time discussion?
+if adding support to more models.
+
+
+few-shot might be better?
+
+
+using  english unlabeled log data?
+
+
+<minwoo>
+coratana logs  (target langauge) for pre-trained model?  
+no using machine translation
+
+
+multilingual modeling platform
+wokr with MinWoo to wrok
+
+next monday is holiday.
+MZ  > 
+MLTL
+
+
+
+
+
+converted to ONNX
+
+
+
+
