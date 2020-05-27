@@ -1,0 +1,87 @@
+multilingual transfer learning
+wei wang
+
+
+
+
+user
+multi lanaguage,   emial intelligient
+
+
+z-code
+multilanguage embedding
+ from MSR 12 level transformer
+ 
+ 
+
+
+zero shot
+few shots discussion
+
+
+key1:
+learning a unified representation
+
+not focus on the work
+resue from MSR
+
+not fine-tune it.
+
+key2:
+learnign semantic
+
+focus
+
+
+GAN
+
+also , using BERT as featire extractor
+
+
+
+reverse signal?
+
+
+language discriminatlo  lost feedback to task-specific predicto
+
+
+zero shot 
+
+trying to learn shared featre extractor
+
+task-specifict
+   only english labled data - some key of 
+
+discruimator
+   english data but no labels
+
+
+adversarial trainnig ?
+
+
+key3:
+sharing semantic from multiple sources
+
+
+problem?
+not understand
+
+
+F1 score
+
+
+
+independent test
+
+will have word alignment problem as well.
+
+
+BWE:  bidrectional representation
+bilinguagle word embedding , as another baseline comared with adversarila training
+
+
+
+then recent work
+smart reply examples
+
+
