@@ -1,0 +1,94 @@
+https://msit.microsoftstream.com/video/72b4bd30-f04e-4917-9e71-485fcbc1ecc4?referrer=https:%2F%2Fppc-onenote.officeapps.live.com%2F
+
+
+<grammar-based parsing>
+
+both needs dictionary 
+ngram probability
+
+EM base algorithm
+label sequence decoing 
+
+
+10:25
+l : hidden algorithm
+
+
+
+dynamic PCFG parsing
+? differeent form pcfg i am using
+
+using satori to get entiy and pass to pcfg to parse
+
+
+<buy one get one freee>
+
+domain
+   using parter annotation to sample queries as postivie
+   also find negative from exaplmes
+   
+slot tagger
+    grammar base, use partner 
+    
+intent 
+     similar domain
+     but using sinlge intent for ALL partners
+     matching model, ranking model
+     using bert
+     
+entityindex
+    satori entites
+    powered by ObjectStore/Osearch
+    having rankier
+    
+    
+ post-web
+     differentail quereis for  multiple possible results
+     rerank the result
+     suppress bad cases
+     leverage URL
+     PCA?
+     entity stampinp (from slot  matching)
+     
+     
+     sginal can be wrong, can be sparse
+     need gate by search logs
+     ?
+
+29:00
+stripy sampling
+
+
+recall measurement
+     bing traffic 100m , 100 positve queries, no good for recall measurement
+     
+     here using 'bucket sampling'
+     
+     <same as yong's proposal>
+     
+     compared to stripy sampling
+             it is optimuum but here it is not optimal
+             
+ Orca
+     focus on
+     dophin
+     
+     pretraining + Multi-task
+     
+     on top of BERT as well
+     
+     
+     zero-shot
+     
+     
+     runtime overflow
+     paralleization
+     
+     orca flow
+     
+     latency e2e
+     10ms for all models, running on GPU
+     
+     domain classfifiter then filter what should run what should not run
+     
+     
