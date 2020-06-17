@@ -1,0 +1,76 @@
+
+
+this is good for building up pipeline
+
+https://web.microsoftstream.com/video/36f7a3ff-0400-a936-5fa9-f1eab0ccdd15
+
+
+
+wiki
+aka.ms/aml/azureml101msai
+
+
+<AML>
+<jeff OMhover>
+
+
+also aether
+
+has wiki
+
+
+heron has AML workspace
+
+跟haoda 的pressentation 很像
+
+also some new features
+eg : data labeling
+
+
+copy notebook to demo
+
+example:
+train sklearn routine
+
+
+you can also create enviornment through code, <different from what haoda does>
+
+chart to investigate different param / different experiementaton to see which is better
+
+
+
+example2: distributed pytorch
+可以參考  因為haoda 也是
+
+pytorch estimator
+
+
+example: pipeline executor
+multiple scripts, move advanced features
+interact with datastore
+? similar to aether  搞不好也可以建在這邊
+
+how to build up dependency? not pretty sure
+
+
+examnple: deploy to cloud
+
+
+? create api to hit
+
+endpoint can setup permission
+
+
+new features
+hyperdrive
+paramter search
+
+
+example: compliant experiementation
+rufous project
+取代aether for compliant data 我因該也能用
+
+
+
+
+AML can interact with Heron now 
