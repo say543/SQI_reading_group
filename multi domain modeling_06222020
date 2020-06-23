@@ -1,0 +1,127 @@
+https://web.microsoftstream.com/video/2a21a1ff-0400-a521-ea48-f1eab4f02a14
+
+<minwoo> solution
+
+
+early prototype
+
+
+universal proprosal
+only intent/slots , no domains
+
+also intent/slot join output (similar to what zhiguo is doing)
+
+doamin mappin layer : to keep originla contact
+
+
+no domians,  so top intent decides domain
+TVS : 90 intents
+
+
+
+this is called 'uber' in QPC
+
+uber_joint_featurizer : shared preprocessing
+
+
+intent\slot togetjer: you can also call mutli task traing (make sense)
+    for a intent, it onyl associates with certain slots
+
+also CLS  , domain token for intent
+
+
+viterbi search
+
+shared parameter (shared by different intents)
+intent-aware parameter.(specific intent search space)
+
+
+flow
+intent/ slot at first , then have a way to infere domain score(to keep the same contract with skills)
+
+how to get domain score?
+    select max per domian(curreent) , or sumof , depending on implemntation
+    
+    no normalziation so far, but HRS needs to turn whether normalization
+    
+    how about using threshold to trigger?
+         right know no, in the future we need to calibrate
+         
+         
+    LU to tell the first hypothese snice no domains core
+       not good, HRS needs to have a way to do that.
+    
+    
+    
+    how about mutti hypothesis for one intent?  
+          it can also work
+          
+          
+    targeting  client base - one model for one client
+    
+
+intent imbalance claasfication
+?  current do not take consideration of intent imbalance
+
+
+only using UNIGRAM , not n-bert
+   bert is future work
+   triangle module (linear module) to prevent intent / slot at the same time
+   still linear model, 
+   
+   
+  evaluation pipeline, can be checked in the futrue
+   
+
+Experiemntation
+   rule fst : remove intent slot patternd but keep domain fst
+   if remove domains,  will be 70% only  (becasue some doamins only has rules , no machine learning model)
+   
+   MDM : no rules(so memory is small)   join features
+         each row is to prove with this feautre , how does it impact result?
+        joint int : do not sue join inf
+        hyper tune: 
+ 
+   low-volumn intent  still an issue
+      wtih respect o people domain data
+      
+   latency reduce?
+      11 domains to 1 domains, also duplicated features extracted , so latench reduced
+      
+      
+      
+  there is a onenote page you can study
+  
+why joint model matter?
+    intent 只會有dedicated slots lists
+
+
+
+now the version does not have a way to add rules?
+    Q1 will address
+
+
+training pipeline
+    can be reused , activated through clu studio
+    
+now the experientation is for teams
+
+demo
+   you can use on carina/ bing intent to test
+
+Q1 plan
+    multi turn support
+    
+    
+similairty-based hotfix?
+    what does it mean?
+    
+    
+     
+
+
+Tao question ? not sure
+
+
+each dataset distribtuion is different
+
