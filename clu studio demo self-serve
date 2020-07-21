@@ -1,0 +1,57 @@
+unify modeling 的feature 還沒在裡面
+
+wcycle
+
+
+import
+
+data import is for evaluation?  or training  or both need to update
+
+will deploy to self-serve
+? b2 does not have self-serve
+
+
+data is not necessary 
+
+
+model normalziation
+   wrapper
+   
+   
+add schema is necessary at first
+
+unblock.
+   new intent, new slot both works
+   QAS ndees to change intents.classes
+    slots.classes
+    
+    
+evaluation result
+   only through email to check
+still need to wait
+    for deploy, roll out time 
+    
+    
+need to ask FST documentation for parners to work
+#fst
+
+
+
+<unblock demo>
+
+unclock need to depend on CMF structure ?
+no, it can be new intent
+
+
+
+# people
+also lexicon
+
+
+
+B2 mobel not yet done?
+
+alternative way 
+is to use clu studio to change model D
+
+then manaully deploy to B2 through DPK
