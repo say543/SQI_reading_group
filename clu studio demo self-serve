@@ -86,8 +86,89 @@ https://microsoftapc.sharepoint.com/teams/STCACLUstudio/Shared%20Documents/Forms
 
 
 49:00
+<possible error>
 我卡在這邊的system failure
 system failure 
+
+
+49:00
+這個時候只有單一個query
+if import successes, then you can run test by a query
+
+
+You can also run evaluation against data you import for evaluation staging 
+
+50:00
+If click deploy,   STATUS will become evaluating 
+It will run evaluation against data you import for evaluation staging 
+if metric is good, you can submit for review
+    (?不知道是不是一定要run evaluation)
+    
+    
+    
+53:00
+hotfix part
+
+
+57:00
+Exact match
+you can change domain score/ intent / slot
+
+1:00:00
+add lit of queres, you can select  (this queries will be added to test evaluation if someone after doing change to the same domain, but not being part of traning data in the future)
+STATUS will change to UserChecking
+
+in the page you can also see difference and submit for review
+
+evaluation result from email
+reviewer 
+    model owner
+       some one from partner team
+    model review admins
+       in one of team
+       
+       
+if revierwer approval
+the STATUS will become reviewed and deploying
+(techninicalliy  deploying  need time for QAS to check in and roll out)
+
+
+
+1:10:08
+pattern match
+
+find #fstfood
+
+# 是一個特別的symbol  for slot
+( ? 因該不是#fst   要try 才知道 )
+
+asking for documentation
+and you can also add  test queriy against this pattern to define slot
+
+
+1:12:00
+another example
+find a #people
+(people is not defined)
+
+people can can be expression or lexicon
+and you can entity to this lexicon
+
+expression
+   you can ad drow
+1:14:00 (many tedious can be used)  
+entity
+   you can add lexicon
+   you can import from data management portal
+
+
+1:15:00
+unblock
+沒有太多的examples
+  new intent && new slot needs to use this
+  
+  add new intent example
+  
 
 
 
