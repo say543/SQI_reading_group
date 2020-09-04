@@ -1,0 +1,52 @@
+
+
+EntityPerturbationExpander.py
+
+
+e1757998-6106-4146-a5cd-d532751f0b11
+
+1 option
+send a note
+swnd a note
+
+
+
+CorruptionPerturbationExpander
+
+
+
+Expansion module to provide the following perturbations:
+1. Remove punctuations
+2. Add specified punctuation randomly
+3. Common misspelling words replacement
+4. Simulates errors made while writing on a QWERTY-type keyboard. Characters are swapped with their neighbors on the keyboard
+
+
+ 4 options
+
+1.
+ok, send a note? -> ok send a note
+
+ 
+
+2.
+send a note->  !
+send ! a note
+send a note !
+
+ 
+
+
+3. Where is my email from Kathan ->
+Where is mine email from Kathan
+Where is my email frm Kathan
+
+ 
+
+4. Send a note -> 
+Swnd a note
+
+ 
+
+
+50 queries , 1-> 50 queries perturbuted queries
