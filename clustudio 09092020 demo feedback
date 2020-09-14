@@ -73,14 +73,65 @@ sesstion
 feedback
 //feedback
 could we update a files for test queires instead of typing ?
+yes. downloads
+
+
+
+
+
+could we check all existing patterns?(previous submit )
+previous 
+
+   ans : if deployed ,add to golden queries and it will be part of evaluation queires for next time
+  除非大版本的變動?
 	
-could we update golden sets queires by ourselves 
+could we update golden sets queires by ourselves?
+   ans : no , previous tab can be the anything being checked
+
+
+
 how do we tell golden sets result?
+    ans: golden set for each domain
+    
+    100%
+    
+    9月底  會有UX 的first version
+    
+    future 會有evaluation link
+    access 
+    
+    
+run evalaution ? only single domain?
+   assitant, needs to run
+   
+   b2 , threshold, only one (in the future)
+    
 	
-how do we know what patterns have been introduced and how should we remove exisitng patterns?
+how do we know what patterns have been introduced?
+     client -> domain-> annotaited -> annotatedPattern -> version should be correct
+     
+     
+how remove existing patterns?
+     currently we cannot do that.    
+     但是在update page 如果有  感覺是很重要的功能
+
+
+
+
+if schema change, belleive 可能要import model 要考慮之前所有的hotfix pattern match 要不要存在
+      因為不support remove
+
 
 how do link answer conduct pattern match self-serve job?
+    wait for B2 deployment to ready then it can be done.
 	
+	
+
+schema 變化可以 import  可以達到remove 的功能
+
+but scheam version 不用變 不會移除 import 也沒用  沒辦法移除東西
+
+
 
 we can demo link doc answer hotfix
 
