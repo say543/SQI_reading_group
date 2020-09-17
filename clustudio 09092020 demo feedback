@@ -74,6 +74,7 @@ feedback
 //feedback
 could we update a files for test queires instead of typing ?
 yes. downloads
+need to have new feature to design
 
 
 
@@ -83,11 +84,13 @@ could we check all existing patterns?(previous submit )
 previous 
 
    ans : if deployed ,add to golden queries and it will be part of evaluation queires for next time
-  除非大版本的變動?
+  除非大版本的變動 因為跟著版本跑
+  一旦version 改變  要model owner check 那些可以migrate 那些不行
 	
 could we update golden sets queires by ourselves?
    ans : no , previous tab can be the anything being checked
-
+    // 忘記怎麼解讀
+    但是每次你加的都會變成golden set
 
 
 how do we tell golden sets result?
@@ -102,7 +105,7 @@ how do we tell golden sets result?
     
     
 run evalaution ? only single domain?
-   assitant, needs to run
+   assitant, needs to run all domains
    
    b2 , threshold, only one (in the future)
     
@@ -120,6 +123,7 @@ how remove existing patterns?
 
 if schema change, belleive 可能要import model 要考慮之前所有的hotfix pattern match 要不要存在
       因為不support remove
+      等於model owner 要自己review 然後幫忙做migration
 
 
 how do link answer conduct pattern match self-serve job?
