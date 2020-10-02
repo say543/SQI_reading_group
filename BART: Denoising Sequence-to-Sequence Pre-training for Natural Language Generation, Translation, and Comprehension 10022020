@@ -1,0 +1,21 @@
+BART: Denoising Sequence-to-Sequence Pre-training for Natural
+Language Generation, Translation, and Comprehension
+
+
+recoding link
+https://microsoft-my.sharepoint-df.com/:v:/p/shagup/ES7I42PflaNElZXeXub-kZoBKdzr_IxE_OIsS-dJ9ldYtw
+
+
+denoising autoencoder 的improvement
+
+
+https://www.aclweb.org/anthology/2020.acl-main.703.pdf
+
+Bidirectional
+Encoder
+(tow directinaol)
+
+Autoregressive
+Decoder
+(GPT - one directional)
+
