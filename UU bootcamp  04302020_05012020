@@ -467,9 +467,16 @@ dependency packages
   MSSearch
     for world wide ring 
     
-    deployment viode
+    deployment video
+    how to deug a dataset
+    deployment tracker
     33:00 can select dataSet
     https://msit.microsoftstream.com/video/8c30a1ff-0400-96d1-7c8f-f1ea8befb2f3
+    
+    left side 
+    select qas -> GriffinB2HttpQAS -> data ->  
+    right side(depending on envioronment) -> click wheel (a column pop out) -> DatasetVersion(filtering by number)
+    number from QAS patch track deployment 'number'   
     
   Torus tool
      sinlge machine testing 
