@@ -130,7 +130,7 @@ Dev validation set : E:\CoreScienceDataStaging\datasets\TeamsVoiceSkills\Test
 (這邊有包含file domain 的data set 因該也有saurahb 的dataset)
 
 3 evauation models
-? 還不知道三個的差別
+? 還不知道三個的差別 
 
 click  'view in default viewer' (moduloe : LU Model Evaluation)　可以看evaluation 的output
 就可以看到monly evaluation including TEAMS BVT 的 evaluation comparison
@@ -150,6 +150,9 @@ https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sour
 module : LU Model Evaluation -> click detail  -> module : [LU] Scorer  -> LogDir
 inside  (module : LU Model Evaluation)  sub module : (20-parallel) Run QAS Model - HighestScoreRankingStrategy
 這個module 一個for production 一個for current model
+這邊也可以pinpoint 哪個query fails  (format athe same as current evaluation data format) 也是用column filterting 
+
+
 
 54:00
 (module : LU Model Evaluation) 目前只跑first turn. can it be extend to multi turn  over aether or it needs to done by clu studio?
@@ -169,6 +172,13 @@ E:\CoreScienceDataStaging\evaluation\Configs
 (module : LU Model Evaluation) 的module (module : LU Dataframe-to-HTml)
 click table output -> view in default brower
 can see different combinantion 的metric
+
+1:05:00  
+(module : LU Model Evaluation) 的module (module : unweighted eval)
+這個只是一個nofe 
+
+
+
 
 
 data source 這個得不太懂
