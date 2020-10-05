@@ -1,4 +1,8 @@
+
+====================================
+Minwoo
 [09242020v1]
+====================================
 https://microsoft-my.sharepoint-df.com/:v:/p/haochu/EdBhTQOnbFJAofiKNtOTC8YBfvT3JVI6ZcpTCb757U3-Tg
 
 
@@ -6,6 +10,7 @@ https://microsoft-my.sharepoint-df.com/:v:/p/haochu/EdBhTQOnbFJAofiKNtOTC8YBfvT3
 
 
 MDM repo
+using python 3,7
 https://msasg.visualstudio.com/LanguageUnderstanding/_git/mijeo?path=%2Faether-python 
 
 
@@ -56,18 +61,93 @@ https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sour
 ? 這邊說用全部的  不是太懂  可能抓下來看看或看code
 
 
-22:45 (read until here)
+22:45 
 all source code repo
 有空看一下
 https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%F0%9F%95%B8%20Contextual%20LU.one%7C253d3f6f-f977-439b-8bb8-fa942df20126%2FContextual%20File%20Domain%20Model%20Tests%20Results%7Ca531e114-48f7-4128-8ff3-80b1c3b7672c%2F)
-
-data source 
 
 
 
 
 Uber Model Pipeline * QPV (? 這個module 有 hard-code 的 code 以後要改)
 
+
+23:55
+triCRF c++ training and test code
+https://msasg.visualstudio.com/QAS/_git/qas?path=%2Fprivate%2Fanswers%2FSDS%2FQCS%2Ftools%2FSparseLinearChainCRF 
+
+
+
+24:54
+training a model wtih pending PR?
+目的不要auto merging 而是要看PR before merging 的contribution
+在'diwnkiad data and config from CoreScienceDataStaging release build drop' 的moduloe -> click parameter -> buildid can be applied
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%E2%99%BE%20Multi-Domain%20Modeling%2F%F0%9F%9A%A2MDM%20V1%20for%20TVS.one%7C320dd1a8-5d91-4734-ac13-0dabc41cee44%2FAether%20Module%20Repo%7C087edd65-aaa2-41da-9c88-8a49d08f784e%2F)
+跟以前的buildid 依樣
+
+27:05
+
+QAS12HtttpQAS(20200916)
+current production model(from search gold). need to update by yourself inorder to see diff
+無法automatic from searchgold 因為searchgold too big
+有個script 可以選你要scrap 的client
+refer to this onenote
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%E2%99%BE%20Multi-Domain%20Modeling%2F%F0%9F%9A%A2MDM%20V1%20for%20TVS.one%7C320dd1a8-5d91-4734-ac13-0dabc41cee44%2FAether%20Module%20Repo%7C087edd65-aaa2-41da-9c88-8a49d08f784e%2F)
+? can this be done through clustudio ? need to ask STCA
+
+
+33:00
+重新討論common domain
+這邊的想法是if people domain is excluded from DomainForTraining parameter, all training data will be change from 'people' doamin to 'OOD'('X' in domain )  domain (out of domain detection)
+
+37:00 - 47:00
+e2e 的behavior  if OOD introduced in the future. if query is in OOD, what is e2e response 
+這些queries 不會被filter　out 會map 到一個default 的intent 所以　e2e 還是還是有response 就會map 到fall back domain
+(是因為　pipeline currently 沒有放OOD module 來throttle traffic)
+in the　future?
+在module  'intent/skit Schema(from Data)'  跟　'joint intent/Slot pipeline select Preproc and Featurize' 中間加一個OOD 這樣真的可以filter 不需要的OOD domain
+
+如何filter ?  因為OOD未必　100% 都是對的　　是不是不能完全bypass TriCRF?
+這個還要討論一下
+
+OOD 這個在offline training is always good
+
+online 有點像是optional
+
+
+47:00
+evaluation  (moduloe : LU Model Evaluation) 會against production model (QAS12HtttpQAS(20200916))
+
+module : Train/Test Set (TVS)
+official :  E:\CoreScienceDataStaging\datasets\TeamsVoiceSkills\Test\Official
+evaluation set :
+
+? 這兩個的definition 還不太懂 要看一下code
+TestSet 
+trainSet 
+
+Dev validation set : E:\CoreScienceDataStaging\datasets\TeamsVoiceSkills\Test
+(這邊有包含file domain 的data set 因該也有saurahb 的dataset)
+
+3 evauation models
+? 還不知道三個的差別
+
+click  'view in default viewer' (moduloe : LU Model Evaluation)　可以看evaluation 的output
+就可以看到monly evaluation including TEAMS BVT 的 evaluation comparison
+red : regression
+green : improvement
+左邊的multiple columns 因該是prod moduel (from module: QAS12HtttpQAS(20200916))
+右邊的是new moduloe
+
+people domain data annotation is not consistently
+
+52:00 how to debug evaluation result (module : LU Model Evaluation)
+module : LU Model Evaluation -> click detail  -> module : [LU] Scorer  -> LogDir
+inside  (module : LU Model Evaluation)  sub module : (20-parallel) Run QAS Model - HighestScoreRankingStrategy
+這個module 一個for production 一個for current model
+
+53:00
+(read until here)
 
 data source 這個得不太懂
 
@@ -141,7 +221,7 @@ exact match
      
      
      
-     
+   
      
   
      
