@@ -1,5 +1,12 @@
 
 ====================================
+execuate command
+====================================
+
+.\QCSQueryLabelWithLES.exe --externalFeaturesColumn 2 --queryInColumn 1 --interactive --verbose --encoding utf-8 --legacyAllowUnusedParameters -c E:\searchgold\deploy\builds\data\answers\QAS12HttpQAS  --variant assistant_enus_tvs_mv1  -dl uber
+
+
+====================================
 Minwoo
 [09242020v1]
 ====================================
