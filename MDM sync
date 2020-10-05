@@ -69,7 +69,7 @@ https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sour
 
 
 
-Uber Model Pipeline * QPV (? 這個module 有 hard-code 的 code 以後要改)
+Uber Model Pipeline * QPV (? 這個module 有 hard-code 的 code 以後要改) (in time 1:09:00)
 
 
 23:55
@@ -175,7 +175,265 @@ can see different combinantion 的metric
 
 1:05:00  
 (module : LU Model Evaluation) 的module (module : unweighted eval)
-這個只是一個nofe 
+這個只是一個node 說明對應的 (module : LU Dataframe-to-HTml) 是沒有考慮frequency 的evaluation
+
+
+
+1:06:00
+(module : QAS Perf Test)
+onenote:
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%E2%99%BE%20Multi-Domain%20Modeling%2F%F0%9F%9A%A2MDM%20V1%20for%20TVS.one%7C320dd1a8-5d91-4734-ac13-0dabc41cee44%2FAether%20Module%20Repo%7C087edd65-aaa2-41da-9c88-8a49d08f784e%2F)
+estimate memory / latency
+click preview 就可以輸出每個feature 的latency / memmory
+2.5 gb memory , 這邊ininclude ondevice 根據video
+perf stat1 : production model
+perf stat2: new model 
+
+current MDM v1 does not have any FST rules, but hotfixes are included.
+
+
+1:09:00
+Chek-in the model into QAS
+onenote:
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%E2%99%BE%20Multi-Domain%20Modeling%2F%F0%9F%9A%A2MDM%20V1%20for%20TVS.one%7C320dd1a8-5d91-4734-ac13-0dabc41cee44%2FAether%20Module%20Repo%7C087edd65-aaa2-41da-9c88-8a49d08f784e%2F)
+(module : Uber Model Pipeline & QPC(Hjoint intent/slot) PLEASEREFACTOR THIS SUBGRAPH)
+output 可以直接download QAS-format output
+但是caveat 這邊是
+(module : Uber Model Pipeline & QPC(Hjoint intent/slot) click detail ->  (module : Teams Domain QPC ) click detail  -> (module : Domain Dispatch Pipeline) 這邊的每個domain 是hardcopy
+if 要加新的domain 好像要自己copy?
+10052020 重新review 似乎多了一了(module : [LU] Parameter to File)  似乎這邊就可以配合global 的graph parameter 的樣子了
+
+1:10:00
+(module : Domain Dispatch Pipeline) 是用來生成 modulo 相關的mapping
+(module : Domain Dispatch Pipeline)  click detail -> (module : Create Directory wtih up to 20 inputs) click output preview
+這邊像是text edutor modulo 這邊會有一堆像是這樣的file for mapping configuration
+calendar.queryprocessingconfiguration.ini                                    	4,769
+assistant_enus_tvs_calendar_mv1.timex.tagid.txt                              	38
+assistant_enus_tvs_calendar_mv1.timeresolution.pipeline.txt                  	579
+assistant_enus_tvs_calendar_mv1.slot.idmap.txt                               	525
+assistant_enus_tvs_calendar_mv1.slot.config.xml                              	1,548
+assistant_enus_tvs_calendar_mv1.intent.idmap.txt                             	227
+assistant_enus_tvs_calendar_mv1.intent.classes.txt                           	682
+assistant_enus_tvs_calendar_mv1.dispatch.pipeline.txt                        	1,644
+assistant_enus_tvs_calendar_mv1.canonicalentities.title.txt                  	779
+assistant_enus_tvs_calendar_mv1.canonicalentities.start_time.txt             	58
+assistant_enus_tvs_calendar_mv1.canonicalentities.slot_attribute.txt         	616
+assistant_enus_tvs_calendar_mv1.canonicalentities.relationship_name.txt      	711
+assistant_enus_tvs_calendar_mv1.canonicalentities.quantity.txt               	132
+assistant_enus_tvs_calendar_mv1.canonicalentities.position_ref.txt           	634
+assistant_enus_tvs_calendar_mv1.canonicalentities.original_start_time.txt    	58
+assistant_enus_tvs_calendar_mv1.canonicalentities.order_ref.txt              	1,029
+assistant_enus_tvs_calendar_mv1.canonicalentities.meeting_type.txt           	251
+assistant_enus_tvs_calendar_mv1.canonicalentities.availability.txt           	117
+
+不同doamin 有不同的 (module : Domain Dispatch Pipeline)
+
+
+1:13:00
+how to track schema?
+不用read clu studio  也不從production model read
+直接從coresciencestaging 的地方讀configuration
+E:\CoreScienceDataStaging\pipeline\mdm\
+有intent class / slot class 等等的configuration
+
+take intent as example
+two columns
+Domain	/ Intent
+calendar	accept_meeting
+calendar	add_attendee
+calendar	block_time
+這邊是local 的  會map 到global
+一旦submit change to here (module : Domain Dispatch Pipeline) 會從這邊拿到
+
+
+
+1:16:00
+(module : Intent/Slot Scheam (from data)) click slot and preview
+這邊會有很多的mapping
+class id (跟prod 相容 slot mapping )
+globalID (in virtual domain 的slot,) 
+所以新增slot 會自動新增 globalId 然後mapped 到class id 的新的as prod domain
+
+Domain	Slot	ClassId	GlobalId
+X	O	0	0
+calendar	O	0	0
+calendar	absolute_location	1	1
+calendar	availability	2	5
+calendar	contact_name	3	7
+calendar	destination_calendar	4	12
+calendar	duration	5	14
+calendar	end_date	6	15
+calendar	end_time	7	16
+calendar	implicit_location	8	29
+calendar	meeting_room	9	32
+
+in the future , might be reading this from clu studio is better to keep schema sync?
+
+
+1:20:00
+test a runtime model in bingIntent
+(after check in)
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%E2%99%BE%20Multi-Domain%20Modeling%2F%F0%9F%9A%A2MDM%20V1%20for%20TVS.one%7C320dd1a8-5d91-4734-ac13-0dabc41cee44%2FAether%20Module%20Repo%7C087edd65-aaa2-41da-9c88-8a49d08f784e%2F)
+currently flight is Team_enus_LuFeatureFlightthree in column 12 griffin qpc
+Microsoft_Teams_enus_LuFeatureFlightThree
+用這個可以test
+
+
+1:21:00
+有沒有包含timex?
+(module : Uber Model Pipeline & QPC(Hjoint intent/slot) PLEASEREFACTOR THIS SUBGRAPH)
+這個module 也有包含timex 跟canonicalEntity
+from E:\CoreScienceDataStaging\pipeline\mdm\
+
+?但是不會自動fetch 的樣子  還是要自己加 for model training
+
+
+
+1:22:00
+hotfix part
+onenote page
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%E2%99%BE%20Multi-Domain%20Modeling%2F%F0%9F%9A%A2MDM%20V1%20for%20TVS.one%7C320dd1a8-5d91-4734-ac13-0dabc41cee44%2FAether%20Module%20Repo%7C087edd65-aaa2-41da-9c88-8a49d08f784e%2F)
+
+
+(module : Uber Model Pipeline & QPC(Hjoint intent/slot) PLEASEREFACTOR THIS SUBGRAPH) ->
+(module : Uber Model Pipeline & QPC(Hjoint intent/slot) click detail ->  
+(module : Uber Domain QPC ) click download output
+
+可以看到feature extraction
+qd_uber_joint_featurizer
+這個是feature extraction by running triCRF model
+qd_uber_rule_featurizer ( in file assistant_enus_tvs_uber_mv1.rule.pipeline.txt)
+(這邊的rule 不是fst rules)
+包含
+1)
+是extra  TaskFrameEntityState  TaskFrameGUID / UserContacts/ UserFileNames 等等
+雖然 UserContacts/ UserFileNames 有被process 但是personalization grammar 在目前都沒有被MDM (uber) 給使用
+2)  CL append
+? not sure why for depp learning
+
+3) concatenation (? 不知道中間有沒有deliminator)
+previoustrunIntent  # previousustrunDomain # previousturndomain 這樣一直往前加 
+全部concatenation 之後  用這個來當作最後hotfix 的format 來match
+from E:\CoreScienceDataStaging\pipeline\mdm\
+assistant_enus_tvs_uber_mv1.hotfix.txt
+
+(可以跟document in FST folder : hotfix format, domain hotfix  intent hotfix slot hotfix) 一起比
+
+有一個caveat here
+for example
+[CLS] next	ExactMatchPrediction	2	0	64	1	0	0	0	1	1	1  (key0)
+和
+inmeeting [CLS] next	ExactMatchPrediction	2	0	64	1	0	0	0	1	1	1 (key1)
+
+後者有previous turn condition  那怎麼match呢?
+in fact order of (assistant_enus_tvs_uber_mv1.rule.pipeline.txt)  does matter 
+WhitelistFeaturizer --in=Key0 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key1 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key2 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key3 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+
+WhitelistFeaturizer --in=Key4 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key5 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key6 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key7 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+
+WhitelistFeaturizer --in=Key8 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key9 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key10 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key11 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+
+WhitelistFeaturizer --in=Key12 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key13 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key14 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+WhitelistFeaturizer --in=Key15 --out=ExactMatchPrediction --textwhitelist=assistant_enus_tvs_uber_mv1.hotfix.txt --loadtextwhitelistasmmap
+
+key1 會override key0 的output based ob ORDER
+
+1:32:00
+assistant_enus_tvs_uber_mv1.hotfix.txt 的format  說明 (包含doamin intnt slot, 但是mdm 沒odmian 就沒差)
+? 但是clu studio 這樣沒辦法判斷哪個domain? 可以from this file Datasource_TVS_ExactMatchHotfix.tsv 
+
+(可以跟document in FST folder : hotfix format, domain hotfix  intent hotfix slot hotfix) 一起比
+
+example1:
+inmeeting [CLS] go to next	ExactMatchPrediction	4	0	64 1	0	0	0	1	1	1	0	1	2	2	0	1	3	3
+// four tokens including cls
+// 0 means nothing
+4 0
+
+//intent 64  (? 感覺是global 而不是local 因為一個domain 沒有那麼多intent)
+// weight = 1
+// 重複兩個0
+
+64 1 0 0
+
+// 忽略CLS token
+// slot 1 for token 1
+// 0: slot = 0, 沒有被tag 有tag 會試slot 的nmuber (是local or global 還不確定? 但是這個format 是)
+// 1: weight =1, default = 1
+// 1: token index in the whole query
+// 1: token index in the whole query repeated again
+
+0	1	1	1
+// 0: slot = 0, 沒有被tag
+// 1: weight =1, default = 1
+// 2: token index in the whole query
+// 2: token index in the whole query repeated again
+0	1	2	2
+// slot 3 for token 3
+// 0: slot = 0, 沒有被tag
+// 1: weight =1, default = 1
+// 3: token index in the whole query
+// 3: token index in the whole query repeated again
+0	1	3	3
+
+
+
+example2:
+[CLS] go home	ExactMatchPrediction	3	0	113	1	0	0	0	1	1	1	77	1	2	2
+
+// three tokens including cls
+// 0 means nothing
+3 0
+
+//intent 113  (? 感覺是global 而不是local 因為一個domain 沒有那麼多intent)
+// weight = 1
+// 重複兩個0
+113 1 0 0
+
+// 忽略CLS token
+// slot 1 for token 1
+// 0: slot = 0, 沒有被tag 有tag 會試slot 的nmuber (是local or global 還不確定? 但是這個format 是)
+// 1: weight =1, default = 1
+// 1: token index in the whole query
+// 1: token index in the whole query repeated again
+
+0	1	1	1
+// 0: slot = 77, 因為是global 的tag
+// 1: weight =1, default = 1
+// 2: token index in the whole query
+// 2: token index in the whole query repeated again
+77	1	2	2
+
+but above 不用自己coding 在
+from E:\CoreScienceDataStaging\pipeline\mdm\
+Datasource_TVS_ExactMatchHotfix.tsv 裡面有所有domain 的hotfix (這邊有specify originnal domain)
+這個是readable 可以改在這  然後pipeline 會自己生成
+
+
+
+
+qd_uber_pos_proc_featurizer
+這邊是mere qd_uber_joint_featurizer / qd_uber_rule_featurizer 的結果
+
+
+
+1:39:00
+subgraph , each module functionality
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%E2%99%BE%20Multi-Domain%20Modeling%2F%F0%9F%9A%A2MDM%20V1%20for%20TVS.one%7C320dd1a8-5d91-4734-ac13-0dabc41cee44%2FAether%20Module%20Repo%7C087edd65-aaa2-41da-9c88-8a49d08f784e%2F)
+
+know issues
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%E2%99%BE%20Multi-Domain%20Modeling%2F%F0%9F%9A%A2MDM%20V1%20for%20TVS.one%7C320dd1a8-5d91-4734-ac13-0dabc41cee44%2FAether%20Module%20Repo%7C087edd65-aaa2-41da-9c88-8a49d08f784e%2F)
 
 
 
