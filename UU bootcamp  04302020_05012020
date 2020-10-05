@@ -476,7 +476,17 @@ dependency packages
     left side 
     select qas -> GriffinB2HttpQAS -> data ->  
     right side(depending on envioronment) -> click wheel (a column pop out) -> DatasetVersion(filtering by number)
-    number from QAS patch track deployment 'number'   
+    number from QAS patch track deployment 'number'
+    
+     有什麼deployment 會fail 在某一個ring (ex: sip)
+     不需要resubmit patch, 可以用下面的方式track
+     
+     但是這個checked in 會在下一個patch 一起被apply
+     Also, we have partner DRI contacts now to help with specific scenarios (yours would be under M365Search). 
+     It will be quicker to tag them and get a response (via mail or stackoverflow): 
+     https://msasg.visualstudio.com/qas/_wiki/wikis/QAS.wiki/53845/QAS-Partner-Contacts
+     可以send to QASDRI (alias ) or ping Alisha Sonawalla 就可以resolve
+     
     
   Torus tool
      sinlge machine testing 
