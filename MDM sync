@@ -16,10 +16,61 @@ d9e6d92d-5eb1-41b8-87fc-6f93b1401cdc
 experiement
 19f2667e-6693-4886-aca3-6247f23417f7
 6:38
-? needs to replace every month
+? needs to replace every month , like a template
 
-
+8:13
 cache mechnisim?
+當clone experiment 的時候 , 
+因為aether 會cache 用
+目的要every 6 hours then retrain whateer
+random GUID generator output to two modeuls(download data, latest QAS tool 然後其他跟有跟他的dependency)這樣aether 不會cache 才會重train
+
+
+8:57
+如果要debug 跟改變single modulo ?
+promote random uuid 's output as data source
+這樣他每次都會依樣  就可以debug 也可以用到cache
+
+
+
+11:57 graph parameter (在你的clone 的graph parameter)
+
+version : change version
+domainForTraning : 可以增加 domain
+
+Uber Model Pipeline * QPV 會生成module 的output , 點選output 可以download (也可以選preview 來check)
+
+
+
+有沒有包含common doamin 有差嗎?
+minwoo 的答案是   by 1005202 if files domian 有用到common domain , 即使common domain 沒有一起train , file 也會ouput common 有用到的intent (但是大概沒有用到select more 我猜)
+
+
+
+data source repo
+22:00
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%F0%9F%95%B8%20Contextual%20LU.one%7C253d3f6f-f977-439b-8bb8-fa942df20126%2FContextual%20File%20Domain%20Model%20Tests%20Results%7Ca531e114-48f7-4128-8ff3-80b1c3b7672c%2F)
+? 這邊說用全部的  不是太懂  可能抓下來看看或看code
+
+
+22:45 (read until here)
+all source code repo
+有空看一下
+https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sourcedoc=%7B75f33d6e-4674-4c39-bd74-112bf8e821ae%7D&action=edit&wd=target(%E2%9A%92%20Feature%20Teams%2F%F0%9F%95%B8%20Contextual%20LU.one%7C253d3f6f-f977-439b-8bb8-fa942df20126%2FContextual%20File%20Domain%20Model%20Tests%20Results%7Ca531e114-48f7-4128-8ff3-80b1c3b7672c%2F)
+
+data source 
+
+
+
+
+Uber Model Pipeline * QPV (? 這個module 有 hard-code 的 code 以後要改)
+
+
+data source 這個得不太懂
+
+
+promote data source as
+
 
 
 job scheduler
