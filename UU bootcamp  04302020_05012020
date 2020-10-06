@@ -322,9 +322,24 @@ or
 用這個app create 更快一些
 要安裝
 https://azure.microsoft.com/en-us/features/storage-explorer/#getting-started
-左上角的人要login credentail veriy -> pop up 一堆  然後點apply
-左上角的setting ->  'Non-compliant MSAI+SI Experimentation' -> storage acconuts -> chiecha -> blob containners -> 'container name you create'
+左上角的人要login credentail veriy -> pop up 一堆  然後點apply (很久沒login 可能要remove account 重新加入azure account, 就是 microsfot login 的account)
+左上角的toggle explorer ->  'Non-compliant MSAI+SI Experimentation' -> storage acconuts -> chiecha -> blob containners -> 'container name you create'
 
+(上傳from aether it is doable,check it in the future)
+
+43:56
+執行'Upload data locally'  會有看到 following 會有一個面的reference number 可以用來refer to data store
+$AZUREML_DATAREFERENCE_dad167b7247a4148a2eec38e8f7c1a8
+
+
+45:00 pytorch estimator
+
+
+
+48:07
+VSCODE左側可以看experiment
+Non-Compliant MSAU_SU Experiementation -> DevExperimentation -> Experiments -> files_domain_classifcation_using_bert (這個是你的experiemnt 的名子)
+(這個路徑跟你的registation setup 有點關西)
 
 
 datastore link
