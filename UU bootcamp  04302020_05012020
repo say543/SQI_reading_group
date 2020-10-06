@@ -395,8 +395,14 @@ miniconda default conda 差別
 這樣可以安裝 然後有jupiter notebook
 conda activate azureml  <= azureml 因該是類似environment
 
-p.s 
+如何install pandas?
 在(anaconda promopt) 也可以直接pip insta ll pandas
+(azureml) C:\Users\chiecha.REDMOND>pip install pandas
+
+如何install sklearn
+在(anaconda promopt) 也可以直接pip install sklearn
+(azureml) C:\Users\chiecha.REDMOND>pip install sklearn
+
 
 
 restart vscode
