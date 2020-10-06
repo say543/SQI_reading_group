@@ -1,5 +1,53 @@
 https://web.microsoftstream.com/video/2a21a1ff-0400-a521-ea48-f1eab4f02a14
 
+good slice for reference
+
+是不同啊 tri-crf是 intent+slot joint training 原来的crf是只做slot filling
+
+
+
+=============================
+rewatch note
+=============================
+15:00
+Joint intent/slot trainnig and preductuin
+LuLCCRF.exe learn -m
+
+[CLS] tok1, tok2, tok3, tok4.
+
+24:00
+what is the doamin score? (有很多domain 的 discussion)
+choose score from intent.
+also it has been done through normalization within a domain.
+HRS needs to tune it to retrain (只有domain score 不夠)
+
+
+
+35:00
+domain concept?
+
+
+45:00
+triangular CRF : doing intent/slot prediction at the same time
+
+
+
+46:26
+perturbation
+的討論
+
+
+1:07:00
+why joint model matter?
+
+
+=======================
+========================
+
+
+used shared parpater
+
+
 <minwoo> solution
 
 
@@ -20,6 +68,7 @@ TVS : 90 intents
 
 
 this is called 'uber' in QPC
+
 
 uber_joint_featurizer : shared preprocessing
 
