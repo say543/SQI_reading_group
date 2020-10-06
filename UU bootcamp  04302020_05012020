@@ -387,17 +387,26 @@ default conda
 https://allen108108.github.io/blog/2019/10/13/%E5%B0%87%20VS%20Code%20%E7%B5%82%E7%AB%AF%E6%A9%9F%E9%A0%90%E8%A8%AD%E6%88%90%E7%82%BA%20Anaconda%20Prompt/
 miniconda default conda 差別
 
-安裝
+如何安裝conda ?
+安裝  install
+(anaconda promopt)
 後來直接開另外個anaconda 的視窗來完成了
 就不用vs code 的default 以後再說
 這樣可以安裝 然後有jupiter notebook
 conda activate azureml  <= azureml 因該是類似environment
+
+p.s 
+在(anaconda promopt) 也可以直接pip insta ll pandas
+
 
 restart vscode
 
 從選virtual environment
 就找的到了
 
+如何安裝pandas 在 azureml envirobment
+在terminal 直接打
+(azureml) C:\Users\chiecha.REDMOND>pip install conda
 
 
 snippert two
