@@ -465,20 +465,48 @@ miniconda default conda 差別
 
 如何安裝conda ?
 安裝  install
-(anaconda promopt)
+(anaconda promopt) wnidows
 後來直接開另外個anaconda 的視窗來完成了
 就不用vs code 的default 以後再說
 這樣可以安裝 然後有jupiter notebook
 conda activate azureml  <= azureml 因該是類似environment
 
+
+如何安裝 notebooks, contrib?
+command
+pip install --upgrade azureml-sdk[notebooks,contrib] scikit-image tensorflow tensorboardX --user 
+沒有space 沒辦法用
+
+
+如何安裝
+jupyter nbextension install --py --user azureml.widgets
+jupyter nbextension enable azureml.widgets --user --py
+? 
+在VSCODE(anaconda promopt) 也可以直接 
+都valdating ok 但是卻沒半法load
+https://ipywidgets.readthedocs.io/en/stable/user_install.html
+解決辦法 (還是fail)
+
+1> conda install -c conda-forge nodejs
+2> pip install jupyterlab
+
+3> jupyter labextension install @jupyter-widgets/jupyterlab-manager
+https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jupyterlab-extension
+
+4> 然後 restrart kernel
+
+
+
 如何install pandas?
-在(anaconda promopt) 也可以直接pip insta ll pandas
-(azureml) C:\Users\chiecha.REDMOND>pip install pandas
+在VSCODE(anaconda promopt) 也可以直接pip insta ll pandas
+or 
+在(anaconda promopt) 也可以直接pip install pandas
 
 如何install sklearn
-在(anaconda promopt) 也可以直接pip install sklearn
-(azureml) C:\Users\chiecha.REDMOND>pip install sklearn
 
+(azureml) C:\Users\chiecha.REDMOND>pip install sklearn
+or 
+在(anaconda promopt) 也可以直接pip install sklearn
 
 
 restart vscode
@@ -488,7 +516,7 @@ restart vscode
 
 如何安裝pandas 在 azureml envirobment
 在terminal 直接打
-(azureml) C:\Users\chiecha.REDMOND>pip install conda
+(azureml) C:\Users\chiecha.REDMOND>pip install pandas
 
 
 snippert two
