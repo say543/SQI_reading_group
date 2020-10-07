@@ -464,8 +464,11 @@ https://allen108108.github.io/blog/2019/10/13/%E5%B0%87%20VS%20Code%20%E7%B5%82%
 miniconda default conda 差別
 
 如何安裝conda ?
-安裝  install
-(anaconda promopt) wnidows
+安裝  install miniconda3
+(anaconda promopt) wnidow
+
+然後開始 anaconda prompt(Miniconda3)  然後執行honda 上面的comment 就行了
+
 後來直接開另外個anaconda 的視窗來完成了
 就不用vs code 的default 以後再說
 這樣可以安裝 然後有jupiter notebook
@@ -475,7 +478,7 @@ conda activate azureml  <= azureml 因該是類似environment
 如何安裝 notebooks, contrib?
 command
 pip install --upgrade azureml-sdk[notebooks,contrib] scikit-image tensorflow tensorboardX --user 
-沒有space 沒辦法用
+清掉cache 後安裝了
 
 
 如何安裝
@@ -485,7 +488,7 @@ jupyter nbextension enable azureml.widgets --user --py
 在VSCODE(anaconda promopt) 也可以直接 
 都valdating ok 但是卻沒半法load
 https://ipywidgets.readthedocs.io/en/stable/user_install.html
-解決辦法 (還是fail)
+解決辦法1: (還是fail 因為這個是jupyterlab 的library)
 
 1> conda install -c conda-forge nodejs
 2> pip install jupyterlab
@@ -495,7 +498,9 @@ https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jup
 
 4> 然後 restrart kernel
 
-
+解決方法2: (failed 因為)
+Module azureml_widgets, semver range ^1.0.0 is not registered
+https://docs.microsoft.com/en-us/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py
 
 如何install pandas?
 在VSCODE(anaconda promopt) 也可以直接pip insta ll pandas
