@@ -357,8 +357,6 @@ notebooks
 0:35:24
 
 how about to submit a job?
-
-
 data sotre 要自己import (if registered by protal already) 
 from azureml.core import Datastore
 ds = Datastore.get(ws, 'chiecha_datastore')
@@ -367,6 +365,27 @@ ds = Datastore.get(ws, 'chiecha_datastore')
 microsoft azure storage explorer 來看data for blob 然後砍檔案
 
 
+
+如果pytorch estimator 要用  要registar 你的dataset
+training_datastore_path = [(ds, './azureml_data/files_domain_training_contexual_answer_small.tsv')]
+training_dataset_obj = Dataset.File.from_files(path=training_datastore_path)
+
+training_dataset_name = 'training_data_set'
+training_dataset_description = 'training_data_set description'
+training_dataset = training_dataset_obj.register(workspace=ws, name=training_dataset_name, description=training_dataset_description, create_new_version=True)
+
+用 training_dataset_name 這個variable 傳到你的.py 上 
+script_params = {
+    '--dataset_name': 'training_data_set'
+}
+
+script_params = script_params  (這行是在py estimator)
+
+
+how to debug output information
+run 6 ->< logs -> azureml-logs, 
+70_driver_log_x.txt 
+這邊有default 的error inforamtion
 
 pytorch estimator
 https://docs.microsoft.com/zh-tw/azure/machine-learning/how-to-train-pytorch
