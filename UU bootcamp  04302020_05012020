@@ -507,9 +507,25 @@ https://ipywidgets.readthedocs.io/en/stable/user_install.html#installing-the-jup
 
 4> 然後 restrart kernel
 
-解決方法2: (failed 因為)
+解決方法2: (failed but work around 方法  from haoda 10072020, SDKJ 1.15.0)
 Module azureml_widgets, semver range ^1.0.0 is not registered
 https://docs.microsoft.com/en-us/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py
+ml.azure.com
+
+選定cluster 跟experiementation
+
+左邊tab 選experiments -> 右邊可以看到 experirment  (eg: files_domain_classification_using_bert)
+run types 可以看到HyperDrive or Pipeline(pipeline 的type 是haoda 的另一個presentation)
+click experiement -> click rnu 就可以看到detail / child runs / metrics / output + logs
+
+左邊tab 選designer (這個裡面的feature 是要模擬 aether 可以try then see how it works and reuse module, 可以以後try 看看)
+
+如果要把pytorch 的format 轉成onnx haoda 說 有api 可以用  可以之後問
+
+
+
+
+
 
 如何install pandas?
 在VSCODE(anaconda promopt) 也可以直接pip insta ll pandas
