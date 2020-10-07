@@ -395,10 +395,54 @@ script_params = {
 script_params = script_params  (這行是在py estimator)
 
 
-how to debug output information
+how to debug output information ?
 run 6 ->< logs -> azureml-logs, 
 70_driver_log_x.txt 
 這邊有default 的error inforamtion
+
+
+how to download output?
+一次會啟動3個run
+某一個run
+run x -> Outputs -> outputs (這個是自己的python 指定的) 裡面會有output
+
+vocab.txt 因該就是參照communication 裡面的file ( cortana_communication_enus_MV4.bert-uncased-vocab.txt )
+
+tokenizer_config.json  會決定model_max length 
+(?這個configuration 不知道怎麼決定的)
+(? 跟WordPieceTokenizer 的maxTokenConut =1024 in cortana_communication_enus_mv6.slot.model.pipeline.txt 不知道有沒有關西)
+
+
+special_tokens_map.json  會決定  一些特殊的tokens
+{"unk_token": "[UNK]", "sep_token": "[SEP]", "pad_token": "[PAD]", "cls_token": "[CLS]", "mask_token": "[MASK]"}
+
+config.json 是一些設定 (? 感覺是在train_horovod.py 裡面的 設定 但是沒找到相關設定)
+{
+  "activation": "gelu",
+  "architectures": [
+    "DistilBertForSequenceClassification"
+  ],
+  "attention_dropout": 0.1,
+  "dim": 768,
+  "dropout": 0.1,
+  "hidden_dim": 3072,
+  "initializer_range": 0.02,
+  "max_position_embeddings": 512,
+  "model_type": "distilbert",
+  "n_heads": 12,
+  "n_layers": 6,
+  "pad_token_id": 0,
+  "qa_dropout": 0.1,
+  "seq_classif_dropout": 0.2,
+  "sinusoidal_pos_embds": false,
+  "tie_weights_": true,
+  "vocab_size": 30522
+}
+
+python_mobel.bin 
+這個因該是最後生成的model ? 不知道怎麼轉成onnx format 然後被使用
+
+
 
 pytorch estimator
 https://docs.microsoft.com/zh-tw/azure/machine-learning/how-to-train-pytorch
