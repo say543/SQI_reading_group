@@ -1,0 +1,21 @@
+1.	Pretrained Transformers Improve Out-of-Distribution Robustness [PDF] – ACL’20
+https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.aclweb.org%2Fanthology%2F2020.acl-main.244.pdf&data=04%7C01%7CChiehChun.Chang%40microsoft.com%7Cfb45db0149c34d4bde3508d86faa59e9%7C72f988bf86f141af91ab2d7cd011db47%7C0%7C0%7C637382124764403444%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=cmpWKP5SxE27NWaRhlnndWa50bJUpMZKjlpuh70y0ng%3D&reserved=0
+
+
+video
+https://microsoft-my.sharepoint-df.com/:v:/p/pagulhan/EXti633YV8BHuiRsED-557YBidyn-V65HaMMBs82sUIkgQ
+
+
+data set collection is much information. could check in the future
+
+
+ALBERT  paramters is smaller than BERT
+
+
+AUROC 思考why needs
+
+
+OOD how it implemented
+
+deeply anaomaly detection wtih outlier exposure (this is one has better)  implemented     
+
