@@ -535,7 +535,13 @@ exact match
      
      
      
-   
+====================
+featurizer study
+====================
+
+[qd_uber_postproc_featurizer]
+assistant_enus_tvs_uber_mv1.postproc.pipeline.txt
+output slot  但是還沒有mapping
      
   
      
