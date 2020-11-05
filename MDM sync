@@ -12,10 +12,17 @@ https://msit.microsoftstream.com/video/2a21a1ff-0400-a521-ea48-f1eab4f02a14
 execuate command
 ====================================
 
+
+
 .\QCSQueryLabelWithLES.exe --externalFeaturesColumn 2 --queryInColumn 1 --interactive --verbose --encoding utf-8 --legacyAllowUnusedParameters -c E:\searchgold\deploy\builds\data\answers\QAS12HttpQAS  --variant assistant_enus_tvs_mv1  -dl uber
 
 CSDSrepo
 .\QCSQueryLabelWithLES.exe --externalFeaturesColumn 2 --queryInColumn 1 --interactive --verbose --encoding utf-8 --legacyAllowUnusedParameters -c E:\CoreScienceDataStaging\models\tvs_assistant  --variant assistant_enus_tvs_mv1  -dl uber
+
+
+
+//outout featurizer debug input for a feature
+.\QCSQueryLabelWithLES.exe --encoding utf-8 --legacyAllowUnusedParameters --verbose --loadingThreadsNum 1 --threadsNum 1 -c E:\CoreScienceDataStaging\models\tvs_assistant --variant assistant_enus_tvs_mv1  -i "E:\CoreScienceDataStaging\datasets\TeamsVoiceSkills\Test\Mustpass_TVS_Files_Golden_after-filtering_single.tsv" -dl uber --queryInColumn 5 --pdebug qd_uber_joint_featurizer --dumpFormat json -o E:\CoreScienceDataStaging\TestResults\Evaluation\uber
 
 ====================================
 Minwoo
