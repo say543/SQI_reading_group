@@ -1,0 +1,28 @@
+[email_title]
+RE: Conversational Pre-trained models for Cortana LU scenarios
+
+[part1]
+
+
+self-learning
+
+
+dropout
+0.2
+ cannot too high or too low
+
+
+ catastrophic forgetting
+
+
+ meta tuning
+
+ meta tunning 比self-learning 好
+
+ [part 2]
+ weak supervision
+這邊也有用到self-learning 跟meta tuning 但是不是太懂   
+
+ source of weak supervision
+
+ focus on 'user behavior'
