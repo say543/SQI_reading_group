@@ -1,4 +1,9 @@
 
+video
+https://microsoft-my.sharepoint-df.com/:v:/p/abjha/EU7hzBpJj-dOlVC3aKetG8MBP3g9nkbN5qfH3Z7NeWBx4g
+
+
+
 [email_title]
 RE: Conversational Pre-trained models for Cortana LU scenarios
 
@@ -28,5 +33,25 @@ dropout
  
  focus on 'user behavior'
  
+ 
+ [recheck]
+ 25:00
+meta learning 的sequence label (這個是for slot tagging 的最後方法)
+判斷uncertainty 然後instance 給weight (instance 只的是few examples, from few shots , 要給teach turning  跟held out set)
+然後instance level breasks to token level
+每個slot 可以再計算stochastic moving average 來track uncertainty 然後update weight
+?這個想法不錯 搞不好multiple hypothesis 也能用 但是沒有重train 不知道行不行
+
+27:23
+10-shot labeling:  10 samples for each slot
+
+
+read until
+30:00
+knowledge distillation
+
+
+
+
  
  
