@@ -1,0 +1,11 @@
+11122020
+
+https://microsoft-my.sharepoint-df.com/:v:/p/stballon/EXHbK5-iDV9PvTlovqvXPtQB0D4gLlmZvwc7-l61LiYJXw
+
+pytorch -> onnx ? unconvertiable
+ans:
+
+pytroch onnx 上板子後  onnx runtime (可能會compress) then hardware runtime 可能會comparess  
+會loss precision
+
+
