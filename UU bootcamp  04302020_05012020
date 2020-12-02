@@ -646,12 +646,17 @@ dependency packages
     33:00 can select dataSet
     https://msit.microsoftstream.com/video/8c30a1ff-0400-96d1-7c8f-f1ea8befb2f3
     
-    left side 
-    select qas -> GriffinB2HttpQAS -> data ->  
-    right side(depending on envioronment) -> click wheel (a column pop out) -> DatasetVersion(filtering by number)
+    // 這個是for B2 的
+    left side( 
+    select qas (account 要add qas) -> GriffinB2HttpQAS (然後filter by this ) -> deployment tracker ->data ->  
+        右邊 就會出現不同ring 的deployment (SDFV2, MSIT, SIP, WW)   
+    right side(depending on envioronment eg: sdfv2, MSIT) -> click wheel (a column pop out) -> DatasetVersion(filtering by number)
     number from QAS patch track deployment 'number'
     
+     右邊
+    
      有什麼deployment 會fail 在某一個ring (ex: sip)
+         faile 似乎是就是你的patch  在那個ring google 找不到
      不需要resubmit patch, 可以用下面的方式track
      
      但是這個checked in 會在下一個patch 一起被apply
@@ -660,7 +665,17 @@ dependency packages
      https://msasg.visualstudio.com/qas/_wiki/wikis/QAS.wiki/53845/QAS-Partner-Contacts
      可以send to QASDRI (alias ) or ping Alisha Sonawalla 就可以resolve
      
-    
+     
+     
+     //for model d 
+     // ? 似乎沒有辦法看ring
+    // method 1
+    left side( 
+    select qas (account 要add qas) -> GriffinHttpQAS (然後filter by this ) -> data deployment tracker ->data deployment by column -> column 12
+     
+   //method2
+   select qas (account 要add qas) -> GriffinHttpQAS (然後filter by this ) -> data deployment tracker  -> 一個個machine 找
+   
   Torus tool
      sinlge machine testing 
      
