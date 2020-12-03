@@ -664,7 +664,8 @@ dependency packages
      右邊
     
      有什麼deployment 會fail 在某一個ring (ex: sip)
-         faile 似乎是就是你的patch  在那個ring google 找不到
+         目前在jarvis 上面沒有辦法看見　pass or fail 的button
+	 只有xts 可能可以
      不需要resubmit patch, 可以用下面的方式track
      
      但是這個checked in 會在下一個patch 一起被apply
