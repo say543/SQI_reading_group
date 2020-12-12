@@ -74,7 +74,7 @@ https://arxiv.org/abs/2002.10957
 Sun et al,. 2019
 MobileBert: a Compact Task-agnostic BERT for resource-limited Devices
 KL convergence
-feature map transfer
+feature map transfer (做一個feature 的projection)
 attention transfer 
 ? both not   can study 
 
@@ -91,10 +91,12 @@ well-read students learn bette: on the improta
 
 1. regular pretraining
    pick a biggest student you can
+   (沒有techer involve)
 2. fine-tune student via distillation
    這時候有better teacher 
-   ? 這個teacher 的來源沒有說 只有事better teacher
-   unlabel data 
+   ? 這個teacher 的來源沒有說 只有事better teacher 
+   (或許我的file 可以這樣用來tune student model  但是這樣是增加unlabel data 而已我猜)
+   用到 unlabel data 
 3. (optin) regular fine tuning
     label data
 
@@ -106,7 +108,7 @@ TinyBERT: Distilling BERT for naturual langugage undetstanding
    多做per-layer transfer
    embedding transfer
    ? 沒有說這邊的data 是label or unlabel
-   沒有說怎麼做 
+   ? 沒有說怎麼做 要看paper 看一下
 2. fine-tune student via distillation  (same as 'fine-tune student via distillation' in 'knowledge distillation for fine-tuing')
 
 
@@ -115,3 +117,34 @@ fine-tune 是不是一定要teacher?
 不一定  但是teacher 可以 carry more information
 用label data 因該也可以
 
+
+
+21:00
+quantization
+
+here talks about linear quantization
+
+motivation:
+    post-quantization
+    train moded then post quantization
+    這樣還是會失去精準度
+    
+so 
+Quantization-Aware Training
+Jacob et al,. 2017
+Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-only inference
+
+forward pass : ^W 對quantized model 計算weight
+baackword pass : 對w 計算weight 
+? 還不太確定這怎麼計算  可能之後看
+
+
+
+zafrir et ak, 2019
+Q8ERT: Quantized 8Bit BERT
+  針對bert 考慮qunatization 跟accuracy, no detail
+  但是不會lost 太多accuracy
+
+Q-BERT: Hessian Based Ultra Kow Preicision Quantization of BERT
+  group precision
+  比較重要的地方  可以給予比較長的precision
