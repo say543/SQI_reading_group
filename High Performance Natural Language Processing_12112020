@@ -56,6 +56,7 @@ positonal encoding
 'knowledge distillation'
 Hinton etak,. 2015 distilling the knowledge in a neural network
 basic idea for knowledge distillation
+用teacher model 來tune student model
 (這邊的teacher model 還沒有pre-trainnig 的概念)
 
 'knowledge distillation for pre-training'
@@ -120,7 +121,7 @@ fine-tune 是不是一定要teacher?
 
 
 21:00
-quantization
+[quantization]
 
 here talks about linear quantization
 
@@ -134,7 +135,7 @@ Quantization-Aware Training
 Jacob et al,. 2017
 Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-only inference
 
-forward pass : ^W 對quantized model 計算weight
+forward pass : 對quantized model ^w 計算weight
 baackword pass : 對w 計算weight 
 ? 還不太確定這怎麼計算  可能之後看
 
@@ -148,3 +149,55 @@ Q8ERT: Quantized 8Bit BERT
 Q-BERT: Hessian Based Ultra Kow Preicision Quantization of BERT
   group precision
   比較重要的地方  可以給予比較長的precision
+  ? 怎麼選擇沒有說
+
+
+above tho method
+? 可能是 parameter 跟 matrix intermediate result 都是integer 還得看paper 來確定
+
+也是有用到forward pass / backword pass , 所以train 的時候memory 會用的更多, 但是online inference 的時候不會
+
+27:00
+quantization with distillation
+Zhang et al,. 2020
+TernaryBERT: Distillation-ware Ultra-low bit BERT
+15 times smaler than original bert
+figure right to left
+
+full-precision teacher
+full precision student
+quantized student
+
+quantized student 計算 forward propagaton + distillation lost (from full-precision teacher) 然後backward propagation to full-precison student
+?最後因該要用的是quantized student
+
+30:00
+smart reply 有用到quantization
+mix precision, also 50% training data reduction
+p.s quantization 相較於mix precision, 能夠更好的adapt 而不是只是truncate precision
+
+[31:00]
+prune
+remove unimportant weights from a network
+
+Pruning  Eayly Work
+LeCnu etal., 1990
+
+Hassibi and Stork, 1993
+second order derivatives for network pruning: Optimal Brain Surgeon
+
+Pruning based on second-order derivatives
+    main idea: start with a reasonably large network
+    train it to convergence
+    prune in multiple iterations based on second-order derivatives
+    OBD: prune and train
+    OBS: prune and update weights based on second-order statistics
+
+
+question : can we TRAIN smaller architecutre instead of pruneing a reasoanly large network?
+實現by 下面的paper
+Pruning the LTH:
+    can we TRAIN smaller architecutre instead of pruneing a reasoanly large network?
+    
+     Frankile and Carbin, 2019
+The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks.
