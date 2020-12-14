@@ -1,4 +1,4 @@
-
+<done>
 https://arxiv.org/abs/2002.10957
 
 https://microsoft-my.sharepoint-df.com/:v:/p/shagup/ERINj5nU3CpAt0s9XqKTvXEBv48WOeJsBwvfXgnFnR3Kjw
@@ -177,7 +177,7 @@ mix precision, also 50% training data reduction
 p.s quantization 相較於mix precision, 能夠更好的adapt 而不是只是truncate precision
 
 [31:00]
-prune
+[prune]
 remove unimportant weights from a network
 
 Pruning  Eayly Work
@@ -196,8 +196,128 @@ Pruning based on second-order derivatives
 
 question : can we TRAIN smaller architecutre instead of pruneing a reasoanly large network?
 實現by 下面的paper
-Pruning the LTH:
+Pruning the LTH: (這邊是在pretrain 的過程中 tuning)
     can we TRAIN smaller architecutre instead of pruneing a reasoanly large network?
     
-     Frankile and Carbin, 2019
-The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks.
+     Frankile and Carbin, 2018
+     The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks.
+     claim 一個 subnet 可以用一樣的iteration  達到一樣的accuracy as the Hassibi and Stork, 1993 的竟可能的bit network
+     method:
+     one shot magnitude tuning
+         step1 : initialization 
+         ? how to initiazliation, 可能就是random initialization
+         step2:
+         train to convergence
+         step3:
+         prune the lowest level weight(only happens one time)
+         step4:
+         use step1 to initialization the lowerst level weight
+         step5:
+         train again
+      method
+      iterative magnitude tuning
+         重複one shot magnitude tuning 很多次
+         ? 這樣step3 每次 initialization the lowest level weight 好像都是依樣
+         
+      帶來的problem:
+         這樣利用 "step3 每次 initialization the lowest level weight " 會造成沒辦法convergence
+         所謂的rewinding
+         
+      solution
+      method
+       Frankile and Carbin, 2019
+       stabalize The Lottery Ticket Hypothesis
+       iterative magnitude tuning with reminding
+       iteration 3 的step4 不再用iteration 1 的initialziation 而是用iteration 2 的step2 (但是不是converge 結果  ? 是train k pass 之後的某一個weight 沒有講細節)
+       
+       claim 說這樣可以增加instability
+         
+     
+      Britax et. all, 2019
+        applying stabalize The Lottery Ticket Hypothesis to transformer architecture
+        constant lottery ticket method
+          跟 stabalize The Lottery Ticket Hypothesis 的差別
+          iteration 3 的step4 不再用iteration 1 的initialziation 而是applyiteration 2 的step2 的 SIGN only (但是不是converge 結果  ? 是train k pass 之後的某一個weight 沒有講細節)
+           constant 的value still the same(? 我猜是 iteration 0 的initialziation 的value 而不是 iteartion 3 的結果)  
+
+
+pruing (fine tuning)
+    movement pruning
+    (? 因為magnitude training 沒辦法用在  fine tuning 不太懂)
+    sanh 2020
+    movement tuting: adaptive spacity for fine tuning
+    用到first-order strategy 而不是 (Pruning based on second-order derivatives)
+pruning for hardware
+     用來support movement tuting: adaptive spacity for fine tuning
+     因為為了spacity 需要hardware block 的一些加速
+
+
+41:00
+[efficient attention]
+
+transformer with attention
+    quadratic bottlenet for mutti head attention
+    within the pass year
+    o(llogl) to o(l) (Lint transformer is part of this , presented by An)
+    
+    method category 
+    1> data-independent patterns
+        因為你familar with problems, 知道哪邊attention 要計算  哪邊不用
+        
+        block wise pattern
+        strided pattern
+        diagonal pattern
+        random pattern
+        
+        global attention (big bert, logformer)
+        48:07
+        ? 可能可以用加強feature
+        for exampke ": [CLS] 在classifciation 中非常重要  他的attention 就要跟所有的token 相關 , 但是其他的token 未必要跟其他所有的tokens 計算attenito
+        
+        combined patterns
+        
+    2> data -dependent patterns (lint former is part of it , 可以知道review 一下)
+        buckets
+        within the same bucket, highest weight attention will be used
+           ? 感覺跟CNN 某一個technique 很像
+        buckets + hashing (locality hashing)
+        相似的vecotrs dot product 會很大也就是說 只要calculate one of them 來節省attention
+        
+        buckets + cluster
+        eg: k-mean clusterin
+        
+        sorting and blocking
+           sorting keys
+           這邊的key 因該是q,k v 的k
+           ? 怎麼實作有空在看
+           
+        compress
+            compress query to smaller dimentions
+               這邊的key 因該是q,k v 的k
+           ? 怎麼實作有空在看        
+        
+        
+    3> kernel and alternative attention mechnisms
+       傳統的 phi function 用q,k,v 來計算similairty
+               這邊的key 因該是q,k v 的k    
+       用kernel
+       可以把過程中的query extracted out summazation 跟k,v 相關的 變成 linear
+       
+       o(L^2d) =>  o(LMD) * O(LMD)
+       m : decompositing dimention
+       ? 可能要知道一下 L , D 是哪個的dimention
+       
+       synthesize paper
+       把q,k 的計算拿掉  projected or randam 到synthesize cell 然後再跟 v 計算
+               這邊的key 因該是q,k v 的k  
+       這邊已經proof 說這樣的效果很competitive 以後可以看
+       
+       
+       
+    4> recurrence
+        input 很長  把他切成k 分  ,  k 可以用k-1 的acitviation 而不用重複計算
+        (skip in this presentation)
+    
+    
+56:00
+cuda discusson?
