@@ -65,7 +65,7 @@ DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter
 (hugging face)
 limitiation:
 teacher 是12 layers bert, student 取其中的six layer
-student needs to have same arachitecture as teacher (eg: using the 6 layers distil then you use the same architecture)
+缺點: student needs to have same arachitecture as teacher (eg: using the 6 layers distil then you use the same architecture)
 
 p.s minLM: a new way to pretrain, check in the future
 a new technology, we can take a look  better in architecutre reusing (?)
@@ -80,11 +80,11 @@ attention transfer
 ? both not   can study 
 
 layers 要全用  但是可以thiner 看圖
-
+缺點: 跟上面依樣  student needs to have same arachitecture as teacher (eg: using the 6 layers distil then you use the same architecture)
 
 15:48
 'knowledge distillation for fine-tuing'
-因為student model 沒辦法用到teacher 的architecutre 因為太大了
+motivation: 因為student model 沒辦法用到teacher 的architecutre 因為太大了
 所以 不是用pre train 而是fine-tuing fine-tuning
 
 Turc et al., 2019
