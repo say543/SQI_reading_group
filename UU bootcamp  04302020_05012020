@@ -466,6 +466,8 @@ config.json 是一些設定 (? 感覺是在train_horovod.py 裡面的 設定 但
 
 python_mobel.bin 
 這個因該是最後生成的model ? 不知道怎麼轉成onnx format 然後被使用
+onnx 轉成QAS 的format
+https://msasg.visualstudio.com/DefaultCollection/QAS/_wiki/wikis/QAS.wiki/48023/Deploying-ONNX-Models-in-QAS
 
 
 
