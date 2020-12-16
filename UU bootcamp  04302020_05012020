@@ -2,8 +2,14 @@
 =============================
 useful traninig examples from others
 =============================
+in VSCode 的左側的 expreiemnt (要follow top to end 的path)
+files_domain_classification_using_bert -> run57 -> right click -> view run in studio 就可以看到 azure studio 的id 就可以拿來load
 
-vscode -> click expe
+另外在experiment -> run45 的snapshot 也可以看到她的*.py 要怎麼使用
+
+
+zhiguo joint model
+https://ml.azure.com/experiments/id/4035e63a-3e23-4b74-8f7c-3abc040b9dc2/runs/e430ca64-72a0-4a7b-ba7d-09a843b064eb?wsid=/subscriptions/ddb33dc4-889c-4fa1-90ce-482d793d6480/resourceGroups/DevExp/workspaces/DevExperimentation&tid=72f988bf-86f1-41af-91ab-2d7cd011db47
 
 
 =============================
