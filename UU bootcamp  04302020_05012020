@@ -470,6 +470,20 @@ onnx 轉成QAS 的format
 https://msasg.visualstudio.com/DefaultCollection/QAS/_wiki/wikis/QAS.wiki/48023/Deploying-ONNX-Models-in-QAS
 
 
+how to reload previous experiment unregistered model
+需要
+ws : 需要讀之前的workspace, 定義在connect to ml workspace 這個section
+experiment_name: 需要讀之前的experiement, 定義在下面這兩行
+experiment_name = 'files_domain_classification_using_bert' 
+experiment = Experiment(ws, name=experiment_name)
+
+id: 這個要參考run 
+eg: files_domain_classification_using_bert -> run57 -> right click -> view run in studio 就可以看到 azure studio 的id 就可以拿來load
+
+run = Run(Experiment(workspace = ws, name=experiment_name), 'HD_e34f95a4-a1a5-4edf-b216-42e5dd420b7a_0')
+run.get_file_names()
+
+
 
 pytorch estimator
 https://docs.microsoft.com/zh-tw/azure/machine-learning/how-to-train-pytorch
