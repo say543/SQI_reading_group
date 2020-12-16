@@ -375,7 +375,7 @@ $AZUREML_DATAREFERENCE_dad167b7247a4148a2eec38e8f7c1a8
 
 
 48:07
-VSCODE左側可以看experiment
+VSCODE左側可以看experiment (if 空白  代表你的sign in 沒有正常  要點左下角的人型  確保你的名子有sign in 然後restart VSCODE  )
 Non-Compliant MSAU_SU Experiementation -> DevExperimentation -> Experiments -> files_domain_classifcation_using_bert (這個是你的experiemnt 的名子)
 (這個路徑跟你的registation setup 有點關西)
 
