@@ -25,3 +25,59 @@ embedding - upate in the future
 
 
 open NMT
+
+
+[6:29 PM] Yue Ma
+    
+Hi Donovan, the latter one.
+
+I am thinking if we can leverage the SM's planning model inside our QAS/LU stack. The current SM model output is Lispress format, but it's mainly APIs and Parameters. If we can convert the APIs, Parameters, into intent/slots, we can see to leverage this representation (and even the model) inside our QAS.
+
+We need to write our parser to parse the Lispress format (contains multiple groups of intent/slots) into QAS AnalyzedQueries. E.g
+
+
+
+(Yield :semantics 
+
+  (:intent
+
+    (Create calendar
+
+      (Constraint[Events] 
+
+        :start date (?= Monday)
+
+        :start time (?= 11 AM)
+
+        :subject (?= "work meeting")
+
+      )
+
+    )
+
+  )
+
+)
+
+=> A QAS AnalyzedQuery with intent: create_calendar 
+slot: start_date = Monday
+        start_time = 11 AM
+        subject = work meeting.
+
+
+(1 liked)​[6:34 PM] Yong Ni
+    
+Two questions:
+
+As you mentioned, to traing the SM model, only the "stub" implementation is being used, is it okay to leave the "live" implementation empty? or simply let it be same as the "stub"?
+
+Can SM model output contain multiple hypotheses of the execution plans?
+
+​[7:28 PM] Yue Ma
+    
+Hi Yong,
+The live implementation can be returning an empty list, as long as it passes the Typescript code compilation. It's only executed at inference.
+
+The model uses beam search and should be able to generate multiple hypotheses (candidate plans), in the paper, it uses 1-best decoding with a beam size of 5. So it keeps tracking of 5 candidates and select the best of them at the end.
+
+Edited
