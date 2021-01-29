@@ -701,7 +701,8 @@ dependency packages
 	I see there is more fresh check-in to that searhgold dataset causing new deployment
         so probably don;t make sens to monitor/touching previous 25660085 versio ndeployment, since new one(25661893) strated the whole process from the scratch
 
-    
+    在jarvis query 的時候  如果沒有更新的batch 那你的batch 只會有上升的trend 不會有endding 的time
+    除非有新的patch 取代你
     
     
     // 這個是for B2 的
