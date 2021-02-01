@@ -1,3 +1,36 @@
+===========================
+new one focusing on feature
+===========================
+<email_title>
+New Eyes-Off OfflineEvaluation Pipeline
+
+Hi All,
+
+Having several discussions with many of you we come up to conclusion that the current version of Aether365 NLAnalizer pipeline is much more enhanced than what we want to have going forward. It was created before shipping the NLEmailSearch and was more focused on simulation of the feature rather than measuring actual user experience. 
+
+Shipping new version of the pipeline, which I hope will satisfy our needs going forward as we have shipped feature and we want to measure success as it is in OIVIC data.
+
+Please note that the new version will be on target for HDI migration as a first priority. 
+
+Please take a look. Feel free raise any questions. All comments and feedbacks are welcome.
+
+Design Doc: Eyes-Off OfflineEvaluationPipeline  (Web view)
+
+New Version of pipeline have run on MSIT January(1-15) data for OWA; aether://experiments/04f7c31c-c9c6-49eb-9901-509813962eb4
+
+Output files: COSMOS cosmos/searchRelevance.aether.store/local/public2/intermediatedata/4/b/c/b/4bcb7e40-faa9-447d-a5f6-1cfce5c2063f/4bcb7e40-faa9-447d-a5f6-1cfce5c2063f/ (osdinfra.net)
+
+Thanks,
+Hasmik
+
+
+
+
+
+
+=========================
+old one 
+=========================
 
 [9:58 AM] Hasmik Tananyan
     
