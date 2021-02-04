@@ -1,0 +1,70 @@
+==============================
+questions
+==============================
+[1:52 PM] Haoda Chu
+    
+In MDM, 33 intents across different domain will be jointly trained together and normalization (softmax) will be applied over 33 intents and then we pick argmax for domain score
+(1 liked)​[1:57 PM] Elizabeth Lingg
+    
+I guess a tie would be highly unlikely between those 33 intents! But similar scores for 2 or more intents after applying the softmax would certainly be possible, especially in cases where say search is keyword based and confidence is really low for all intents.
+(2 liked)Edited​[2:00 PM] Paulo Salem da Silva
+    Typically it is easier to do n-ary classification for small n. Why is domain classification (which should be easier) being skipped and going directly to intent classification (which are more numerous)? To avoid having more than one classification model (domain -> intent) in the pipeline?
+​[2:02 PM] Paulo Salem da Silva
+    
+Elizabeth Lingg
+I guess a tie would be highly unlikely between those 33 intents! But similar scores for 2 or more intents after applying the softmax would certainly be possible, especially in cases where say search is…
+That's my concern about classification problems with too many classes. 
+​[2:04 PM] Elizabeth Lingg
+    
+It is true that P/R for a n-ary classification model where n is large would be much worse. Yet maintaining many models is also very complex. I've seen some of my previous team members try out approaches where they run 2 inputs through the same deep network and apply a similarity score on the output results to see whether two inputs are the same (siamese networks).
+(1 liked)​[2:05 PM] Yuancheng Tu
+    
+Another point to get rid of domain classification is due to certain ambiguity among different domains. For example, one intent may be valid for multiple domains.
+Edited​[2:07 PM] Yong Ni
+    
+Yuancheng Tu
+Another point to get rid of domain classification is due to certain ambiguity among different domains. For example, one intent may be valid for multiple domains.
+In practice, one intent out of MDM can be mapped to multiple domains - even having same domain scores, so to allow multiple skills triggered and let HRS to make the final decison
+(1 liked)​[2:08 PM] Yuancheng Tu
+    
+Thanks, Yong! And Different domains may contain same or very similar intents, integrating them reduce the modeling efforts as well.
+​[2:09 PM] Donovan Lange
+    
+Great conversation!  One thing I'm also worried about is how we validate/test.  Ensuring that a single change doesn't regress an experience far away... 
+​[2:10 PM] Donovan Lange
+    
+(Take this not as: we shouldn't do this.  But that we will over time have to get better at thinking about gating, validation, etc)
+(3 liked)
+
+==============================
+==============================
+
+usng passed 8 months what being used to make sure what intents/ losts are being used
+also ask skill team to confirm
+
+
+conflict?
+
+calibration?
+
+
+TNLR
+
+
+
+smaller TNLR MODEL
+
+
+tinyBert  results
+
+
+contunous pipeline
+  retraining based on DSAT
+  ? similar to haoda continuous training
+  ? might be clu studio
+  
+  e2e pipeline in MDM also has
+  
+adapter?
+  freeze certain layers
+  only retrain a certain of lintent
