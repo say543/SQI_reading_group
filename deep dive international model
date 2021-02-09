@@ -117,3 +117,16 @@ pretrained model is fixed
 
 
 how Teacher 
+
+
+lexicon feature
+?  not in M1
+
+if including, need manually conversaion.
+
+
+wordpiecetomenizer5.md
+? 感覺是merge slot 在不同language 才有影響
+
+
+
