@@ -1,0 +1,119 @@
+
+======================
+talk / questions
+======================
+Introduction? I was hoping for a deep dive. 😃
+
+Profile picture of Mei-Yuh Hwang.There is too much details that Xinjie is cu... by Mei-Yuh Hwang
+
+Mei-Yuh Hwang
+3:34 PM
+
+👍
+2
+There is too much details that Xinjie is cutting out. So he is calling it "introduction"
+Profile picture of Milad Shokouhi.brb by Milad Shokouhi
+
+Milad Shokouhi
+3:34 PM
+
+👍
+1
+brb
+
+back but have a hard stop at 4pm unfortunat... by Milad Shokouhi
+
+Milad Shokouhi3:38 PM
+back but have a hard stop at 4pm unfortunately. I'll watch the 2nd half of video offline
+
+Profile picture of Mei-Yuh Hwang.Where is the pseudo parallel text from? by Mei-Yuh Hwang
+
+Mei-Yuh Hwang
+3:40 PM
+Where is the pseudo parallel text from?
+
+(en-us, MT(en-us)) ? by Mei-Yuh Hwang
+
+Mei-Yuh Hwang3:40 PM
+👍
+1
+(en-us, MT(en-us)) ?
+
+FYI: Giza++ is an open source for training ... by Mei-Yuh Hwang
+
+Mei-Yuh Hwang3:41 PM
+FYI: Giza++ is an open source for training MT and run-time inference, which is able to output the translation alignment, usually at phrase leve.
+
+"report" can be translated into multiple wa... by Mei-Yuh Hwang
+
+Mei-Yuh Hwang3:43 PM
+"report" can be translated into multiple ways in Chinese. Without domain knowledge, MT usually does not do well.
+
+Profile picture of Mikkel Conradi.Does this Machine Translation approach acco... by Mikkel Conradi
+
+Mikkel Conradi
+3:44 PM
+Edited
+Does this Machine Translation approach account for the fact that some languages have a very different structure than English? For example, in German, the verb is often the last word in the sentence.
+
+Profile picture of Mei-Yuh Hwang.Yes, it's all data-driven. by Mei-Yuh Hwang
+
+Mei-Yuh Hwang
+3:44 PM
+
+👍
+1
+Yes, it's all data-driven.
+
+Not by syntatic rules by Mei-Yuh Hwang
+
+Mei-Yuh Hwang3:44 PM
+Not by syntatic rules
+
+Profile picture of Shuyin Zhao.is that what the translation alignment tool... by Shuyin Zhao
+
+Shuyin Zhao
+3:45 PM
+is that what the translation alignment tool like Giza++ does?
+
+Profile picture of Mei-Yuh Hwang.Name entities should be locale-appropriate,... by Mei-Yuh Hwang
+
+Mei-Yuh Hwang
+3:45 PM
+Name entities should be locale-appropriate, rather than direct translation.
+
+Giza++ contains both a trainer to train an ... by Mei-Yuh Hwang
+
+Mei-Yuh Hwang3:46 PM
+👍
+1
+Giza++ contains both a trainer to train an MT model. Also run-time inference, whose output contains (1) translation output, (2) phrase alignment, such as (good morning, 早上好)
+
+
+
+======================
+======================
+
+TNLR v1 24 layers
+500k
+teach model
+
+bi lstm or CRF
+? 這個不太懂  可能可以之後看
+
+
+Sorry have to drop; thanks Xinjie. Please note that TULRv3 should be available for experimentation too and is going to be very similar to v2. Also we have implementations for 
+both wordpiece and sentencepience. 
+I think you're already connected, but please let me know if I can put you in touch for more details
+
+
+
+adapter
+'papameter efficient adapter'
+too high
+
+'light-wegiht adapter from ORCA'
+pretrained model is fixed
+
+
+how Teacher 
