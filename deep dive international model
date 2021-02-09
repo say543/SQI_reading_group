@@ -89,6 +89,135 @@ Mei-Yuh Hwang3:46 PM
 1
 Giza++ contains both a trainer to train an MT model. Also run-time inference, whose output contains (1) translation output, (2) phrase alignment, such as (good morning, 早上好)
 
+Actually Giza++ contains multiple trainers/inference engines using different algorithms
+
+for satori entity, i suppose you query satori graph it will give you a list of candidates. (for example : alice) . is any processing or filtering being applied  to select from a returened list ? thanks.
+
+Chieh-Chun Chang
+for satori entity, i suppose you query satori graph it will give you a list of candidates. (for example : alice) . is any processing or filtering being applied  to select from a returened list ? thanks.
+Query by entity type; usually you can apply all the returned entity strings in your data augmentation.
+    
+for multi-state distillation: does that mean each state you only back propgation with respoect to a specific lost?  how those losts being decided in order?  thanks!
+​
+
+What translated names are used is not as important, once you start to use PCG as one of your input features, which Xinjie did some experiments, but not sure if he has time to talk about.
+
+The idea is that this particular deep learning model will at some point substitute all the current LU models in production? In order to make I18n (and maintenance) simpler for all models? Or is this specific to some set of models/products? Or we don't know yet?  It is not clear to me how the deep learning model shown fits with the other existing or upcoming models.
+
+Sorry have to drop; thanks Xinjie. Please note that TULRv3 should be available for experimentation too and is going to be very similar to v2. Also we have implementations for both wordpiece and sentencepience. I think you're already connected, but please let me know if I can put you in touch for more details
+
+as more langs & domains added to same universal model, distilled student model may need to get larger
+
+Yes, that's one way to do it. But need to make sure it doesn't have regression on existing domains.
+
+The direction is to ship universal models for all UU scenarios, at least for all the non-En locales.
+
+
+    
+For en-us, Yue is working on TNLR for PME. So I can imagine more and more our models will become transformer-based.
+​
+    
+However, if it's a search scenario, we have to ship it on B2 FPGA, which has limited capacity. 
+​
+    
+Each domain has its own adapter, but shares the pre-trained model for representation.
+
+
+
+    
+Since ORCA is using adapter, they are also asking Brainwave team to consider FPGA support.
+​
+
+
+    
+reduction by 130MB, or reduced TO 130MB?
+​[4:14 PM] Mei-Yuh Hwang
+    
+BTW, these are on top of the student model (after distilled from the big model), correct?
+​[4:15 PM] Yang Yang (MSAI)
+    
+correct
+​[4:15 PM] Mei-Yuh Hwang
+    
+FPGA quantization: 16bit or 8bit?
+​[4:16 PM] Kieran McDonald
+    
+I think they support both and msfp but could be wrong
+​[4:20 PM] Mei-Yuh Hwang
+    
+still in SDFv2 limited availability to a small set of users
+​[4:23 PM] Chieh-Chun Chang
+    
+for multi-state distillation: does that mean each state you only back propgation with respoect to a specific lost?  how those losts being decided in order?  thanks!
+
+
+[4:27 PM] Mei-Yuh Hwang
+    
++1 using unlabeled data!!!
+(2 liked)Edited​[4:31 PM] Mei-Yuh Hwang
+    
+Thank you, Xinjie. I have to drop for my next meeting.
+​[4:31 PM] Yang Yang (MSAI)
+    
+have to drop. thank you XInjie
+​[4:31 PM] Mei-Yuh Hwang
+    
++1 using unlabeled data
+​[4:34 PM] Donald Huo
+    Have to drop now. Thanks, Xinjie
+​[4:34 PM] Kieran McDonald
+    
+Great work and presentation!
+​[4:34 PM] Mikkel Conradi
+    
+Thanks Xinjie!
+​[4:35 PM] Kieran McDonald
+    
+thank you
+​[4:35 PM] Yue Ma
+    Thanks Xinjie!
+
+​[4:43 PM] Xinjie Zhou
+    
+Chieh-Chun Chang
+12,532  paparmeters accounts for just sinlge domain or multiple domains? thanks.
+7 domains, each domain has a different adapter. We used TVS dataset in that experiment.
+Edited
+
+
+    
+Chieh-Chun Chang
+12,532  paparmeters accounts for just sinlge domain or multiple domains? thanks.
+It's the number for just one adaptor structure.
+
+
+
++1 using unlabeled data!!!
+​
+    
+Thank you, Xinjie. I have to drop for my next meeting.
+​
+    
+have to drop. thank you XInjie
+​
+    
++1 using unlabeled data
+​
+    Have to drop now. Thanks, Xinjie
+​
+    
+Great work and presentation!
+​
+    
+Thanks Xinjie!
+​
+    
+thank you
+​
+    Thanks Xinjie!
+
+
+
 
 
 ======================
