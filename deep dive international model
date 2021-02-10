@@ -256,27 +256,88 @@ Edited
 ======================
 ======================
 
+1
+
 TNLR v1 24 layers
 500k
 teach model
 
-bi lstm or CRF
-? 這個不太懂  可能可以之後看
+
+15:00 model archutecture
+CLS + token embedding
+domain softmax on CLS , 就是input 的token embeding 
+intent : softmax on CLS
+
+slot : token embeeding on top of bi-LSTM CRF
+? 在想我的作法因該也是bert 使用的第二種做法 fine turn bert with extra layer 而不是第一種作法 用embedding 的reult 直接給utput layer
 
 
-Sorry have to drop; thanks Xinjie. Please note that TULRv3 should be available for experimentation too and is going to be very similar to v2. Also we have implementations for 
-both wordpiece and sentencepience. 
-I think you're already connected, but please let me know if I can put you in touch for more details
+27:00
+q1: universak model v.s langugage-specific model ? which one is better
+conclusion : universal model can perform better than langugae-specifc model
 
+q2: could we add new domains without impacting existing ones?
+simple way : fix parameters, only fine-tune the doamin specific parameters(people)
+but performance is not good, so we use adapter
 
-
-adapter
+29:56
+adapter (a new model introduced in transformer's block)
+31:26
+fix transformer paramters, but fine tune adapter parameter models
 'papameter efficient adapter'
-too high
+but might not be very efficient snice 10 domains you need to add whole, more not be very efficent
 
+thus, go with this 
 'light-wegiht adapter from ORCA'
-pretrained model is fixed
+light- weight adapter is outside of transformer
+it aggregates the output the all transformer layers' output
 
+adapter 
+weghted sum + stacked convolution + full connect  => then output to eac domain
+
+at the same time, pretrained model will be fixed. will not need to fine tune 
+? but not sure how many layers
+
+
+35:25
+Mbert
+<comaprison>
+adapter use all 12 layers output + enmbedding output
+? what does that mean
+fine tune bottom 6 layers and train the top 6 layers
+
+
+37:04
+more on adapter
+share hardware ?
+but adpter structre is not supported on FPGA right now.
+
+
+
+40:32
+vocab pruning
+
+
+
+
+42:30
+Konwledge distillation
+teacher(1024) / student (768) dimention
+
+
+weight initialzation
+    student with teacher initialization provide better performance
+    truncation method - use sub dimention 
+knowledge distillation
+     hard loss : golde labe from data annotation
+     soft loss : learn prediceted distribution from teacher
+     intermeridate loss : intermediate loss
+       all is applied in multi-state traninig , in a order
+     order : intermediate -> hard -> soft (by many experiments then have this model)
+     
+ additionla data
+    levarge unlabelde data for distillation.
+     
 
 how Teacher 
 
@@ -284,7 +345,7 @@ how Teacher
 lexicon feature
 ?  not in M1
 
-if including, need manually conversaion.
+if including, need manually conversaion. (but not covered in this presentation)
 
 
 wordpiecetomenizer5.md
