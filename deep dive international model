@@ -220,6 +220,39 @@ thank you
 
 
 
+summary question
+[1]
+for multi-state distillation: does that mean each state you only back propgation with respoect to a specific lost?  how those losts being decided in order?  thanks!
+Yes, multi-stage distillation means we use different loss functions in different training stages. 
+We conducted many experiments to compare one loss vs. multiple loss and the training order of different loss.
+
+
+[2]
+Chieh-Chun Chang
+12,532  paparmeters accounts for just sinlge domain or multiple domains? thanks. 這個就是adapter
+adapter 的相關東西
+7 domains, each domain has a different adapter. We used TVS dataset in that experiment
+
+[3]
+Since ORCA is using adapter, they are also asking Brainwave team to consider FPGA support.
+
+[4]
+Sorry have to drop; thanks Xinjie. 
+Please note that TULRv3 should be available for experimentation too and is going to be very similar to v2. Also we have implementations for both wordpiece and sentencepience. I think you're already connected, but please let me know if I can put you in touch for more details
+
+
+[5]
+[Yesterday 3:49 PM] Yang Yang (MSAI)
+    
+Chieh-Chun Chang
+for satori entity, i suppose you query satori graph it will give you a list of candidates. (for example : alice) . is any processing or filtering being applied  to select from a returened list ? thanks.
+Query by entity type; usually you can apply all the returned entity strings in your data augmentation.
+​[Yesterday 3:50 PM] Mei-Yuh Hwang
+    
+What translated names are used is not as important, once you start to use PCG as one of your input features, which Xinjie did some experiments, but not sure if he has time to talk about.
+Edited
+
+
 ======================
 ======================
 
