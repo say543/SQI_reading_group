@@ -1,5 +1,96 @@
+===============
+review
+===============
+08:30
+thomas 
+
+query indx ?
 
 
+postweb
+match URI signal to do answer arbiration, answer suppression
+
+12:15
+DLIS
+QU model
+
+
+grammar parsing from Dophin
+also EM algorithm
+
+shared transformer encoder : to enpower multile task in multile lnaguages
+
+15:44
+
+x pretrained has data but task specific does not have. do not know how it work?
+
+17:11
+question from ye-yi : do you pretrained the whole model or you just use bert
+we do continuous training 
+we do not pretrained model
+
+
+18:23
+orca:
+e2e 
+
+bing: most queries are key phrase, not NL queries
+
+single token query?
+
+torpedo
+auto query sampling
+
+APSAT
+threshold control
+
+
+URP
+universal reranking platform
+
+auto labeling based on clikc
+ APAST : user click informaiton , requery informaiton
+ postweb : similarity
+ google : google scriping to check google triggering 
+ 
+ 
+25:00
+for each answer if it either collect data by its own or use orca, it will affect their 'task layer' parameter
+share enconcer is not going to change
+those collected data will be stored in repository since they might be good negative examples for other partner team
+similar to MDM
+
+
+27:00
+postweb?
+SLAPI
+segment stamp:
+two year
+
+
+28:00
+milad
+use goolge scripting to improve model?
+doing this need to pass some review , need to confirm
+
+
+31:00
+satori being used?
+in entity resolution
+answer trigger (? not sure how this works)
+but satori coverage for internaitonal is good enough (? this is april 2020) might be know it is better
+
+
+
+31:00
+options for share encoder?
+how to find optimun share encoder?
+
+
+
+
+===============
+===============
 https://web.microsoftstream.com/video/72b4bd30-f04e-4917-9e71-485fcbc1ecc4
 
 EM
@@ -33,3 +124,6 @@ DLIS
     filter
        domain classfier to prevent from runing all  modules
     
+
+
+
