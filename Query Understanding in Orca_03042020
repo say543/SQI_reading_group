@@ -86,7 +86,112 @@ but satori coverage for internaitonal is good enough (? this is april 2020) migh
 options for share encoder?
 how to find optimun share encoder?
 
+first uniCoder: facebook SOM
+    needs to provide langugage ? 不知道是啥
+    
+second
+XLM-R
+  levrage more data in commonCrawl (ComomCrawl has only monolingual data)
+  uses MLM as pretrained task
+  no input enncoding layer
+  
+  35:40 difference between XLM-R and XLM
+  XLM-R(robert, covers different languags) , XLM (data sourcefrom wiki, sbutitle, amount is smaller than XLM-R robert)
+  
+  
+ongongi
+unicode v3,  TULR  still ongoing
 
+36:00
+how orca onboard?
+1> fixed encoder, fine-tune taks layer
+2> fixed encodere, fine-tune task layer with adapter
+   it is becasue shared encoder (treated as feature extraction) might not fit all task, si adapter is to provide more funcionalityes
+3> e2e fine-tune segment teacher model, distill to student
+    teach model may start with continual trained encoder
+    student modle may add adapter
+    
+    partners can start wtih segment of specific teacher model and apply continal train
+    using bing queries to further improvement
+
+    37:00
+    here fixed encoder 不是直接用XLM-R, they still fine tune a little bit
+    
+38:00
+task adapter
+
+adding bert ?
+要看一下是不是跟haoda 說的一樣
+1> heavy-weight adpter (transformer archectuec,  每一個transforemer layer1  有一個heavy-wieght adapter 1)
+兩個input : word embedding layer, transformer 的ouput
+
+
+convolution layer
+weight sum over all layers
+2> light-weight adapter
+
+quality is roughly the same,  but perforance is beter for latency
+
+
+so in conclusion:
+for task layer, it has two inputs 1) transformer layer output 2) convolutional layer's output from adapter
+
+but in final architecture, we have 'heavy-weight adpter' and 'light-weight adapter' at the design 
+in pratice,
+slot tagging tend to use 'heavy-weight adpter'
+doamin / intent(classification job) tens to use light-weight adapter
+    42:23
+    真實情況
+    domain classication 兩層  
+    first layer using light-weight adaopter to classify 100 domains -> 5 doamins candidate
+    second layer using heavy-weight adpter to classify from 5 -> 1 becasue those are very hard queries
+
+
+
+42:00
+e2e continual training
+teacher model is 24 layers
+very good to improve teacher's encoder
+
+
+
+45:00
+how to find the best , suitable student encoder?
+using multi-task learning.
+but stability is a key concern for multi-task learning
+one task can learn from another task
+
+how to resolve 
+solution :1
+adaptive scheduling
+   after one epoch, if some taks behind, it will sample more data 
+   ? not sure how calculate weights being done
+   same trick can be appplied to achieve balance in different langugages
+
+
+48:23
+midway - ongoing projects
+post-web engine
+
+49:27
+torpedo
+iterative  self-learning piepeline
+
+
+stduent is 12 layers model
+250M
+seven hunred mega bytes
+lantency
+30 to 40 
+GPU in routine
+
+50:00
+orca runtime
+
+56:00
+<read until here>
+DLIS or QAS
+? understand what is the drection for deep learning model
 
 
 ===============
