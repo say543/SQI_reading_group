@@ -87,6 +87,10 @@ Uber Model Pipeline * QPV 會生成module 的output , 點選output 可以downloa
 minwoo 的答案是   by 1005202 if files domian 有用到common domain , 即使common domain 沒有一起train , file 也會ouput common 有用到的intent (但是大概沒有用到select more 我猜)
 
 
+20:00 
+add new domain? 
+there are some caveat we need to hardcode
+
 
 data source repo
 22:00
