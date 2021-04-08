@@ -79,6 +79,8 @@ domainForTraning : 可以增加 domain
 
 Uber Model Pipeline * QPV 會生成module 的output , 點選output 可以download (也可以選preview 來check)
 
+14:00
+說明不用include fallback as graph parameter 因為web , fallback ondevice 都當成fallback domain 的 一部分
 
 
 有沒有包含common doamin 有差嗎?
