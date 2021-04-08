@@ -246,7 +246,7 @@ https://microsoftapc.sharepoint.com/:o:/r/teams/CLU705/_layouts/15/Doc.aspx?sour
 output 可以直接download QAS-format output
 但是caveat 這邊是
 (module : Uber Model Pipeline & QPC(Hjoint intent/slot) click detail ->  (module : Teams Domain QPC ) click detail  -> (module : Domain Dispatch Pipeline) 這邊的每個domain 是hardcopy
-if 要加新的domain 好像要自己copy?
+if 要加新的domain 好像要自己copy?  (fallback 不用加)
 10052020 重新review 似乎多了一了(module : [LU] Parameter to File)  似乎這邊就可以配合global 的graph parameter 的樣子了
 
 1:10:00
