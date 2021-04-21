@@ -169,6 +169,12 @@ adaptive scheduling
    same trick can be appplied to achieve balance in different langugages
 
 
+
+solution : 2 task adaption
+if tasks cannot be joined the same time  (multi task traning cannot give you optimum result,  single task gives you the base result)
+basic transformer layer
+
+
 48:23
 midway - ongoing projects
 post-web engine
