@@ -179,7 +179,13 @@ here mentioning 'merging featurer'?
 upstream network will not be affected, basically concat transofrmer with either downstream feturiers
 p.s task speciifc, only for that task, other task data cannot iterative this parameter
 
-order : if task layer is good enough, then we try adapter
+order : 
+becasue production service is up and running,  would like to keep roginila embeddeding layer fix
+so the priority is
+to tune for a specific task, try its speccific task layer at first (other task should not reitearte this task layer)
+if specific layer does not work well, we try speccific task layer adpater to reiterative as well
+(adapter architecture is more complex than task layers)
+
 
 
 
