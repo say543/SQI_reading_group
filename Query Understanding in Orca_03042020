@@ -172,7 +172,17 @@ adaptive scheduling
 
 solution : 2 task adaption
 if tasks cannot be joined the same time  (multi task traning cannot give you optimum result,  single task gives you the base result)
-basic transformer layer
+other than asic transformer layer(originla embeed layer, kind of feature extraction) 
+transformer layer -> adapter (deep task layer,extract intermediate outputs from different layers of encoder, green) -> task speciifc(task ,complexity can be variant, blue)
+
+here mentioning 'merging featurer'?
+upstream network will not be affected, basically concat transofrmer with either downstream feturiers
+p.s task speciifc, only for that task, other task data cannot iterative this parameter
+
+order : if task layer is good enough, then we try adapter
+
+
+
 
 
 48:23
