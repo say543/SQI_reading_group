@@ -1,0 +1,104 @@
+
+
+[hr1]
+
+bucket
+
+
+ensure casulity 
+
+
+
+at the end
+A/A
+An A/A test is a useful end-to-end test of your entire experimentation system, and a good "sanity check" of your metrics. You can isolate issues with your platform from issues with a specific experiment. Teams at Microsoft typically run a lot of these A/A tests to validate that their setup is working properly.
+
+
+HEART
+
+
+[hr2]
+Carl's A/B test
+
+how to judge alternative hypothesis / null hypothese? find evidence against hypothese  by p-value
+
+If you're curious, Rule of Thumb #7 from this paper by our team quantifies how big "large enough" is based on the distribution of your metric: Seven Rules of Thumb for Web Site Experimenters (exp-platform.com)
+
+
+how to coumpter p- value
+? rarity by many  many time random assignemnt /shuffle and calculate delta
+(Because we assumed the null hypothesis is true, we're allowed to shuffle the users.)
+
+ in these simulations, we're not actually re-running the experiment. We're taking the logs from the experiment period and re-shuffling the users' logs offline.
+
+
+
+a picutre from centrul theorem
+
+
+
+
+how about you get p =0.047 from A/A ? ()
+this is ridiculator
+
+type1 -error: false positives
+(coomon  p-value is 0.05)
+
+
+one question ? 200 / 1000
+4% (this is acutally very close to p-value)
+
+click 'insights' bouton to check if you doing A/A or A/B
+
+
+
+when should i trust a stat sig movement?
+
+replication experiement
+check different audience/data_range
+
+
+p-value = 0 ,  (might be ?.... very small)
+I think it's below 1e-99 where we stop showing p-value. There's about 1e80 particles in the universe, so this p-value should be far beyond "impossible"
+
+
+why not adjusting p- value, you might miss some real treatment effects(so called power)
+
+power: if the null hypothesis is false, how likely are we to detect it?
+'finding power in exp scorescords' you can 
+depending on number of traffic/ users
+
+usually 80% column is enough , not look at 95% column
+
+
+large treatment effect then you observe bigger power.
+
+
+bigger samples also more accurately estimate the means of the populations.
+
+
+'Factors Which affect Power'
+
+
+the lower your metrics variance, the more power you have
+
+
+
+
+
+type II eerrors : false negative
+(this is related to previous power defintion)
+
+
+
+
+prevent sequential comarison
+
+
+heavy user / all users it might affect you A/B test
+
+different market will have different behavior so only run experiement for the audience you are targeting.
+
+
+
+[hr3]
