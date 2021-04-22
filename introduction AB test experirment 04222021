@@ -102,3 +102,39 @@ different market will have different behavior so only run experiement for the au
 
 
 [hr3]
+
+//run concurrentexperiement
+'Numberlines' to ioslate experiement from one another.
+
+
+ 
+Exp's interaction detection: detect ongoing features
+
+
+//triggering 
+needs counterfactual logging.
+
+counterfactual logging
+Counterfactual Logging" means exactly "finding the equivalent for the control group" - we need to log in Control whether users were eligible to see the promo code link
+i.e. they didn't see it (because they were in Control) but they were eligible to see it (because they were on the Checkout page with an eligible item in their cart)
+
+
+segmentation
+segments pf onterested tool from EXP
+
+sample ratio mismatched
+
+
+experimenta tool management
+not listening
+
+
+
+carryover effect
+not listening 
+
+
+telemetry logging 
+not listening 
+
+
