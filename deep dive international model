@@ -286,11 +286,22 @@ adapter (a new model introduced in transformer's block)
 fix transformer paramters, but fine tune adapter parameter models
 'papameter efficient adapter'
 but might not be very efficient snice 10 domains you need to add whole, more not be very efficent
+also needs to add inside into transfomer architecture, not easy to use
 
 thus, go with this 
 'light-wegiht adapter from ORCA'
 light- weight adapter is outside of transformer
 it aggregates the output the all transformer layers' output
+no need to add inside inot transformer architecture
+do not fine tune pretrained model (??  always fixed)
+you can leverage TNLR v1, TNLR v2,
+only fine-tune adapter
+
+
+
+
+
+
 
 adapter 
 weghted sum + stacked convolution + full connect  => then output to eac domain
@@ -302,7 +313,7 @@ at the same time, pretrained model will be fixed. will not need to fine tune
 35:25
 Mbert
 <comaprison>
-adapter use all 12 layers output + enmbedding output
+light weight adapter use all 12 layers output + enmbedding output
 ? what does that mean
 fine tune bottom 6 layers and train the top 6 layers
 
