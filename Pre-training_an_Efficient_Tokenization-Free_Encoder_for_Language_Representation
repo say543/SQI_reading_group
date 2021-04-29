@@ -1,0 +1,13 @@
+
+
+https://arxiv.org/pdf/2103.06874.pdf
+
+
+
+ CANINE
+ CANINE, a neural
+encoder that operates directly on character
+sequences—without explicit tokenization or
+vocabulary—and a pre-training strategy that
+operates either directly on characters or optionally uses subwords as a soft inductive
+bias.
