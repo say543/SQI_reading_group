@@ -5,6 +5,36 @@ https://microsoft-my.sharepoint-df.com/:v:/p/tasun/EddT8SKvl8dKuXN7zAdlOrwB_7nCI
 review starting 
 14:50
 
+15:48
+i cannot access wokr space , need to follow up
+
+18:12
+heron project to get ADSL link
+this is something needed to run evaluation on compliance boundat
+civp-2
+adl://destadlsgrfwrqpnqwq5c.azuredatalakestore.net/ebd84bee04304275b5d4f951b05e13d0/raw
+
+adl://destadlsgrfwrqpnqwq5c.azuredatalakestore.net/ <= this is location part will be used
+(p.s search queries and assistant queries are in different like civp civp2 / oivic / oivic-2  so heron id needs to be correct)
+
+
+
+in modulo 'copy data from Mars to Mars (Auto approved)'
+paaramter  EuclidWordSpaceID 這個是heron project 的id 也要configure 對 
+(
+  through this link https://substrate.microsoft.net/euclidai/projects/19925bb4-3f79-af31-95ac-4e76917a11fa/environments/92cf29f5-7e45-417b-a4fe-790073c52dc4#ebd84bee-0430-4275-b5d4-f951b05e13d0
+  click extraction 
+)
+cfd13ac5-a6e6-b080-4872-7e21d3328e82_41b1215b-63f4-4df9-a659-5e89d46cd2a1
+
+
+20:00
+data source
+single file (AzureEncryptedBlobFileReference)
+directory 
+
+
+
 deck
 https://microsoftapc.sharepoint.com/:p:/r/teams/CLU705/_layouts/15/guestaccess.aspx?e=lbIxpa&CID=29E5A4C4-EF8C-49DE-9AD5-E7BB9F5FCD77&wdLOR=c1D62DF4A-5A83-4E63-AADF-27D1792BCA5A&share=EcdTi9e-WzlBpAMTtAWTr9YBHGocK1x3yNVID42n6JSyNQ
 
