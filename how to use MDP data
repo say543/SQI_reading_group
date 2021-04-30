@@ -36,9 +36,58 @@ directory
 
 21:00
 <very important,  also how to use adlclient>
-how to use data source
+how to use data source ?
+
+// 像linux 的list command
+adlsclient list .
+
+upload adlclient  沒有教學怎麼download
 
 
+DSVM is needed to upload config and model file
+but data source is not necessary, it can be done by 
+1> create aether data source 2> using a specific module to upload it to DSVM to create a compliance data source
+
+
+28:00
+move data in and out of compliance boundary
+'copy any resource to mars'
+
+
+
+31:00
+compilance E2E model input and output
+'model input '
+1>module 'Use local module Extractor'
+latest searchgold by providing paramters to extract models
+(covered in demo with paramters)
+
+2> upload model yourself
+? no provided detail
+
+'evaluation config'
+
+
+41:00
+multi-annotation britely talk, how to debug
+
+41:30
+viewing experiemnt results
+live demo
+
+
+46:00
+how to debug stderr
+
+46:38
+live demo to download from container
+
+
+49:00
+mutli annotation par
+
+
+49:54 local module description (yarsolev)
 
 deck
 https://microsoftapc.sharepoint.com/:p:/r/teams/CLU705/_layouts/15/guestaccess.aspx?e=lbIxpa&CID=29E5A4C4-EF8C-49DE-9AD5-E7BB9F5FCD77&wdLOR=c1D62DF4A-5A83-4E63-AADF-27D1792BCA5A&share=EcdTi9e-WzlBpAMTtAWTr9YBHGocK1x3yNVID42n6JSyNQ
