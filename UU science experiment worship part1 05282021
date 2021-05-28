@@ -1,0 +1,223 @@
+
+[presentation 1]
+@zhiguo
+https://microsoftapc.sharepoint.com/teams/CLU705/_layouts/OneNote.aspx?id=%2Fteams%2FCLU705%2FShared%20Documents%2FUser%20Understanding&wd=target%28%F0%9F%91%A9%E2%80%8D%F0%9F%94%AC%20Science%2FOnline%20Experimentation%20workshop.one%7C5094AC62-6C04-4AFC-BBBD-D4B413326B67%2FFlight%20config%20%26%20Control%20Tower%7C5B8B944C-45E2-45D5-86EC-0242183A57E5%2F%29
+
+presentation 1:
+
+
+step1 /step2
+
+step3: asdebug to test three (going forward , using SBS tool is ok)
+
+
+step4: control tower setup
+a demo can be studifed in the future
+
+
+
+
+good discussion -  auto-create isolitoon group / User existing isolation Group(this is choice when both experiemnts runinng flight, divided by percentage traffic)
+
+
+vijay comment does not understand
+scenario filteer?
+
+
+setup up treatment/
+another comment:
+Nice reminder, if the flight doesn't need to call QAS, don't name the flight with prefix "luqas"
+?  this one is not very clear to me.  we should go with lugas
+
+
+
+seteup progression
+  ? you can see other experiements . if wantting to share traffic, need to inform who owns the domain and also run experiement
+  
+step5: validation flight
+parse your configuration
+
+usualy you will see faile. i if those are unrelated to your change ,then just ignore.
+
+
+[presentation 2]
+@ saurabh
+
+how to make sure conuterfiip work?
+there is tool to filter
+
+
+analysis scorebaord button  on scorebaaord 
+?
+trying to explain each group has 
+
+
+a link fro a group metric triggering condition, need to insert into control tower scorecard 'Expression'
+
+
+
+trigger scorecard setup
+click 'clone'
+
+same name ? not sure
+
+
+33%  cojtrol  , impression, usertrigger
+
+
+'get torus account credentials' => link (i needed)
+
+
+a likn to describe the definition of each metric
+
+
+filter score card ?
+differen trigger confition setuo
+
+
+
+expresion:
+per scenario.
+containskey ()
+different for each SERP /answer:  calendar, people, files
+also the whole 
+name / how to log will affect how to write this expression
+log will affect the whole expression
+
+counterfactual logging(is in client side)
+
+
+
+clinet benefit (from raj)
+
+also need to pair with client (eg: resource clink)
+
+
+files example
+describe some issues we ecountered for scorecard revie
+
+click metric to get a pop up detailed table, to get deifinitoon
+column -> column denition (name, refer to link and git link)
+git link to find column definition
+
+
+routename? not deifiniotn in column definition
+it is related to Immpression type
+
+
+also script library provided (in score link)
+good example (similar to previous slapi script i wrote)
+scope you need to setup your acconut for torus credential
+
+
+email search domain
+no result flow for email : so recource link will not 100% (but otheres file serp without no result flow it wiil be 100%)
+
+
+SERP abandant metrics
+users abandan usage
+
+answers PCR
+  conversaion : one query called a conversation after click or button (switching tab will not create different conversaion)
+  session id : certain period , but in trigger score card once suers uses feature, it has not time duration, it will always to true.
+  
+  same query  same logical impression but different page impression
+  
+anser CCR (clink)
+   ? different from answer PCR, need to check later by myself.
+   ? entity
+
+
+
+session succes rate
+time to sucess
+  ? no defnition in page
+  
+ 
+ 
+ 
+people cluster positon?
+    whether it is a shiftment or regression ? hard to decide it is good or bad is pretty hard
+    
+    
+ming :
+    satinity check (recource link = 100%) , the can be passed down to other modelers
+ 
+
+
+model overtrigger?
+   for files, need to check
+   
+   
+scripts to ask another team as example?
+     previously being turned down
+     might be asking as a TEAM is better.
+     
+     KUOMING might use the same script to extra, might be we can talk to them.
+     
+     
+
+[presentation 3]
+
+@ eric
+couhterfactual  signal and pipeline
+definition of counterfactual logging
+  good definition
+  
+  (currently signals are for SERP, not for answers, need to add to somewhere how answer checks trigger)
+ 
+  good for introducing new models
+  
+  
+  no good for iterating model
+  ? why not balance , in design discussion channel ?
+    becasue of new feature , triggering condtion 不同 所以ratio 不同
+    但是我們因為要用tirgger scoreboard 因為traffic 太少
+    
+  proposal:
+     control group => run new / old
+     new to fix SRM pool
+     old to get model result and aleration result then log
+        
+    
+  
+   
+  SRM issue
+    : sample ratio mismatch 
+    
+ 
+flow
+  xap
+  QAR : query alteration response
+  wrapped in with CFI as QADD
+  to 
+  GWS
+  into instrumentation payload
+  
+  to 
+  ODIN/AURIGA (data cooking)
+  to
+  COSMOS
+
+signals
+  has definiton in keys , used in expression
+  
+  
+  how to add news
+  
+  you need to do several things (in one note)
+
+
+
+  how about answerting trigger metric ? should we add or ask answer team to add?
+  
+
+
+could we captue signal in QAS level ? not alteration level?
+   then it can shared by both SERP and answer?
+   no , according to document is is better ot add to alteration part
+   
+   
+ trigger scorecard
+   document :  < 50% you need to have 
+      people : 40% then you do not need 
