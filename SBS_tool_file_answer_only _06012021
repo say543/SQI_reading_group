@@ -8,3 +8,27 @@ https://msasg.visualstudio.com/LanguageUnderstanding/_wiki/wikis/LanguageUnderst
 
 video
 https://microsoft-my.sharepoint-df.com/:v:/p/tasun/EVO2O5qn6vVPl0TybILnyu8BShO5w6H7OQmfpIpQDZFQ0Q
+
+
+
+<email_title>
+RE: SBS trial run for File answer
+
+Thanks everyone for joining the meeting and sharing your feedback!
+
+We encourage everyone to give a try E2E, and let us know for any potential issues or improvement.
+Please always reference wiki UU E2E SBS - Overview (visualstudio.com) for all details
+
+We identified the following improvement from tooling side. Will share ETA soon.
+•	Task 3568121: Debug: "shuyin's file" should have triggered people answer on OM
+•	Task 3568290: Rename "user submitted" and "default queries"
+•	Task 3568304: Allow users to edit and delete task settings
+•	Task 3568352: Sort task names by alphabet
+•	Task 3568373: Show Top results when answer shows up
+•	Task 3568405: Add wiki link to DWEngine
+•	Task 3568492: UI change: show task name and task settings on judge page
+
+Recordings:
+•	  SBS for file answer
+•	  SBS for people answer
+
