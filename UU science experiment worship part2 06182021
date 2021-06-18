@@ -1,1 +1,209 @@
 placeholder
+
+
+
+part1
+
+[email_search]
+
+yuencheng
+logical id
+   ? need to review again.
+   
+
+conversaion id
+  defined in client side
+  
+  put back to search bar and type another query then it is another conversation id
+
+search session
+
+    most time base
+    
+    
+ each use has its own session
+ 
+ 
+ success definition
+    p.s email search definition
+    by event click type
+    
+conversation definitin
+   
+session success definiton
+
+
+definition
+any click
+engagement Click
+Success Click
+
+_C , _t ,_CT 
+definitio ? not understand the definition
+
+
+
+
+
+[filesearch]
+saurabh
+
+
+case 1:
+
+
+case 2:
+suppress , this one i do not understand whole
+
+
+case 3:
+
+
+
+scorecoard
+session sussess rate 
+by seesion (? might be coniversaion session)
+by users
+
+they are calculated in different
+
+query alteration
+no request modification <= definition
+
+
+sciencecard template
+all MSAI  people
+
+
+bookmark
+
+challenging patterns
+
+
+
+case 4:
+
+
+[people answer]
+Zhiguo
+there is a onenote page? asking for link
+
+
+sss => 3s
+
+some of them told by people teams
+
+different from other searchs
+
+slowSearchQualityOfSerivce
+MSO provided
+
+also other MSO related matrixs
+
+
+good idea for our feature flight test  but this is not trigger scorecard
+
+no using trigger scorecard: because trigger rate is very high.
+
+
+MSOsearch success
+
+
+
+[PME]
+signed off by scorecard
+
+skill team has its way to calculate
+
+mainly talks about latency
+
+assistant , flight 50% 50%
+
+no trigger nottion in PME
+
+for teams: it is hard to do that
+
+autoNaviation:
+     reading one meail finished then go to the next one
+     
+1024 1ms reduced
+
+
+UPL : also including network latency
+
+
+
+how to calculate session succes rate?
+    similar to task complete rate
+    
+polite refusal rate?
+    ask skill team to check
+    
+    
+[cortana]
+Eric
+
+asking eric for scorecard latency
+
+develop.....
+simlar  defintion from  SDFv2/
+
+but actually devlope is defined by data center
+
+
+saurabh clarify one thing?
+
+
+ranker feature level
+
+
+analysis scorecard
+
+
+in cortana ,day you do not have standarad score card
+
+
+segment1
+market:
+
+segment2:
+secondary:
+
+
+target conect_name recall.
+3% , decpending on a special metric defined here
+
+
+
+
+
+
+
+route 
+
+
+
+
+
+    
+
+no feedback loop    
+
+
+currently is in model D
+
+
+currently pure voice
+  
+
+
+
+part2:
+
+
+
+
+
+
+
+ 
